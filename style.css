@@ -1,26 +1,56 @@
-*{
-	margin: 0;
-	padding: 0;
-	background: black;
+/* Basis-Stil */
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f4f4f4;
+  color: #000;
 }
 
-h1 {
-	color: whitesmoke;
-	font-size: 30px;
-	margin-bottom: 15px;
+/* Navigation */
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
-p {
-	font-size: 20px;
-	color: #f7f7f7;
-	margin-bottom: 8px;
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
 }
 
-.container {
-	position: absolute;
-	width: 600px;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #003366; /* Dunkles Blau */
+}
+
+/* Hauptinhalt Abstand zur Navigation */
+main {
+  padding-top: 100px;
+}
+
+/* Beispielsektion */
+.hero {
+  padding: 5rem;
+  text-align: center;
 }
