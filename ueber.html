@@ -29,10 +29,18 @@
     </section>
   </main>
 
+ <!-- JavaScript -->
   <script>
     const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    mobileMenu.addEventListener('click', () => {
+      navList.classList.toggle('active');
     });
   </script>
 </body>
