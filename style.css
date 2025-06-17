@@ -6,14 +6,17 @@ body {
   color: #000;
 }
 
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+..container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh; /* nimmt die volle Höhe des Bildschirms */
+  width: 100%;
   text-align: center;
-  max-width: 600px;
-  width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Navigation */
