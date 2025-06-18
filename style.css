@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Avenir', sans-serif;
+  font-family: Avenir, sans-serif;
   background-color: #f0f0f0;
   color: black;
   scroll-behavior: smooth;
@@ -36,18 +36,27 @@ html, body {
   position: relative;
 }
 
-.logo a {
+/* Logo (LR) */
+.logo {
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logo a {
   color: black;
   text-decoration: none;
 }
 
-/* Navigation wrapper */
+/* Navigation wrapper (Desktop) */
 .nav-wrapper {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Navigation mittig auf Desktop */
 }
 
 .nav-list {
@@ -66,30 +75,38 @@ html, body {
 }
 
 .nav-list li a:hover {
-  color: #003366;
+  color: #003366; /* Dunkelblau beim Hover */
 }
 
-/* Hamburger-Menü (nur mobil) */
+/* Hamburger (nur mobil) */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
   color: black;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  user-select: none;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
+  /* Navigation links ausblenden */
   .nav-wrapper {
     display: none;
   }
 
+  /* Hamburger anzeigen */
   .menu-toggle {
     display: block;
     position: absolute;
     right: 20px;
-    top: 10px;
-    z-index: 1100;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
+  /* Navigation mobile Menü (Sidebar Vollbild) */
   .nav-list {
     position: fixed;
     top: 0;
@@ -116,7 +133,7 @@ html, body {
   }
 
   .nav-list li a:hover {
-    color: #007bff;
+    color: #007bff; /* Blau beim Hover */
   }
 }
 
@@ -135,17 +152,15 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
 }
 
-/* Weißer Text über Video */
 .video-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  color: white; /* Schrift ist weiß */
   z-index: 2;
   font-family: 'Avenir', sans-serif;
   padding: 0 20px;
@@ -154,6 +169,7 @@ html, body {
 .video-overlay h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  font-weight: 900;
 }
 
 .video-overlay p {
@@ -161,16 +177,7 @@ html, body {
   font-weight: 300;
 }
 
-/* Text nach dem Video */
-.after-video-text {
-  background-color: black;
-  color: white;
-  padding: 80px 20px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-/* Projekt Intro */
+/* Abschnitt unter dem Video */
 .project-intro {
   background-color: #000;
   color: #fff;
@@ -209,17 +216,30 @@ html, body {
   color: #fff;
 }
 
-/* Responsive Text */
+/* Mobile Schriftgrößen anpassen */
 @media (max-width: 768px) {
   .video-overlay h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .video-overlay p {
     font-size: 1.2rem;
   }
 
+  .project-intro {
+    padding: 60px 20px;
+  }
+
+  .project-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-intro p {
+    font-size: 1rem;
+  }
+
   .btn-projects {
+    padding: 10px 25px;
     font-size: 1rem;
   }
 }
