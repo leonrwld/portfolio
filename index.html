@@ -3,43 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LR – Portfolio</title>
+  <title>Leon Rohrwild – Kreativer Filmemacher und Fotograf</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DIN+Pro:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header id="navbar">
-  <div class="nav-container">
-    <div class="logo"><a href="index.html">LR</a></div>
-    <nav class="nav-wrapper">
-      <ul class="nav-list">
-        <li><a href="videos.html">Videos</a></li>
-        <li><a href="fotos.html">Fotos</a></li>
-        <li><a href="ueber.html">Über</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-      </ul>
-    </nav>
-    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-  </div>
-</header>
+  <!-- Navigation -->
+  <header id="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">LR</a></div>
+      <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="fotos.html">Fotos</a></li>
+          <li><a href="ueber.html">Über</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    </div>
+  </header>
 
-  <main>
-    <section class="hero-video">
-      <video autoplay muted loop playsinline class="background-video">
-        <source src="Mainvideo.mp4" type="video/mp4" />
-        Dein Browser unterstützt das Video-Tag nicht.
-      </video>
-      <div class="hero-text">
-        <h1>Leon Rohrwild</h1>
-        <p>Kreativer Filmemacher und Fotograf</p>
-      </div>
-    </section>
+  <!-- Video Hero -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline>
+      <source src="Mainvideo.mp4" type="video/mp4" />
+      Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+    <div class="video-overlay">
+      <h1>Leon Rohrwild</h1>
+      <p>Kreativer Filmemacher und Fotograf</p>
+    </div>
+  </section>
 
-    <section class="after-video-text">
-      <p>Willkommen in meinem kreativen Raum – hier findest du Videos, Fotos und mehr.</p>
-    </section>
-  </main>
+  <!-- Neuer Abschnitt -->
+  <section class="project-intro">
+    <h2>Ob Outdoor, Freizeit, Sport, Events oder Design</h2>
+    <p>Als Filmemacher und Fotograf realisiere ich kreative Foto- und Videoprojekte für Kampagnen, Werbefilme, Autos, Porträts und vieles mehr.</p>
+    <a class="btn-projects" href="videos.html">Projekte</a>
+  </section>
 
   <script>
     const navbar = document.getElementById('navbar');
@@ -54,6 +59,5 @@
       navList.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
