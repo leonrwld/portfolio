@@ -161,6 +161,44 @@ html, body {
   margin-top: 10px;
 }
 
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* WICHTIG: Schrift ist weiß */
+  z-index: 2;
+  font-family: 'Avenir', sans-serif;
+  padding: 0 20px;
+}
+
+.video-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.video-overlay p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 /* Text nach dem Video */
 .after-video-text {
   background-color: black;
