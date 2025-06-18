@@ -14,8 +14,8 @@
   <header id="navbar">
     <div class="nav-container">
       <div class="logo"><a href="index.html">LR</a></div>
-      <nav class="nav-wrapper">
-        <ul class="nav-list">
+      <nav>
+        <ul class="nav-list" id="nav-list">
           <li><a href="videos.html">Videos</a></li>
           <li><a href="fotos.html">Fotos</a></li>
           <li><a href="ueber.html">Über</a></li>
@@ -39,17 +39,18 @@
     </div>
   </section>
 
-  <!-- Neuer Abschnitt -->
+  <!-- Projekt-Intro Abschnitt -->
   <section class="project-intro">
     <h2>Ob Outdoor, Freizeit, Sport, Events oder Design</h2>
     <p>Als Filmemacher und Fotograf realisiere ich kreative Foto- und Videoprojekte für Kampagnen, Werbefilme, Autos, Porträts und vieles mehr.</p>
     <a class="btn-projects" href="videos.html">Projekte</a>
   </section>
 
+  <!-- JavaScript -->
   <script>
     const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('.nav-list');
+    const navList = document.getElementById('nav-list');
 
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
