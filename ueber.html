@@ -7,46 +7,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">LR</div>
-    <nav class="nav-links">
-      <a href="index.html">LR</a>
-      <a href="videos.html">Videos</a>
-      <a href="fotos.html">Fotos</a>
-      <a href="ueber.html">Über</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <header id="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">LR</a></div>
+      <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="fotos.html">Fotos</a></li>
+          <li><a href="ueber.html">Über</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">LR</a>
-    <a href="videos.html">Videos</a>
-    <a href="fotos.html">Fotos</a>
-    <a href="ueber.html">Über</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </div>
-
   <main class="page-content">
-    <h1>Über mich</h1>
-    <p>Ich bin Leon Rohrwild – leidenschaftlicher Filmemacher und Fotograf.</p>
+    <section class="section">
+      <h1>Über</h1>
+      <p>Hier erfährst du mehr über mich und meine Arbeit.</p>
+    </section>
   </main>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.classList.toggle("active");
-    }
+    const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
 
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("transparent");
-      } else {
-        navbar.classList.remove("transparent");
-      }
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    mobileMenu.addEventListener('click', () => {
+      navList.classList.toggle('active');
     });
   </script>
 </body>
