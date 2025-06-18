@@ -180,3 +180,43 @@ html, body {
     font-size: 1.2rem;
   }
 }
+
+/* Abschnitt unter dem Video */
+.project-intro {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  font-family: 'Avenir', sans-serif;
+}
+
+.project-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Avenir', sans-serif;
+}
+
+.project-intro p {
+  font-family: 'DIN Pro', sans-serif;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.btn-projects {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #004488;
+  text-decoration: none;
+  border-radius: 25px;
+  font-family: 'Avenir', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-projects:hover {
+  background-color: #004488;
+  color: #fff;
+}
