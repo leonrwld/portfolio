@@ -32,7 +32,7 @@ html, body {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* LR links, rest rechts */
+  justify-content: space-between;
   position: relative;
 }
 
@@ -41,16 +41,13 @@ html, body {
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  background: white;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 
-/* Navigation wrapper (Desktop) */
+/* Navigation wrapper für Desktop - mittig */
 .nav-wrapper {
   flex: 1;
   display: flex;
-  justify-content: center; /* Navigation mittig */
+  justify-content: center;
 }
 
 .nav-list {
@@ -65,14 +62,15 @@ html, body {
   text-decoration: none;
   color: black;
   font-weight: 500;
+  font-family: Avenir, sans-serif;
   transition: color 0.3s ease;
 }
 
 .nav-list li a:hover {
-  color: #003366;
+  color: #003366; /* dunkles Blau */
 }
 
-/* Hamburger Menu - versteckt auf Desktop */
+/* Hamburger Menü - nur mobil */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -80,12 +78,10 @@ html, body {
   color: black;
   background: white;
   padding: 5px 10px;
-  border-radius: 5px;
-  position: relative;
-  z-index: 1100;
+  border-radius: 4px;
 }
 
-/* Mobile Styles */
+/* MOBILE STYLES */
 @media (max-width: 768px) {
   .nav-wrapper {
     display: none;
@@ -98,15 +94,6 @@ html, body {
     top: 10px;
   }
 
-  .nav-container {
-    justify-content: flex-start; /* LR links */
-  }
-
-  .menu-toggle {
-    margin-left: auto; /* damit rechts */
-  }
-
-  /* Mobile Nav List als Overlay */
   .nav-list {
     position: fixed;
     top: 0;
@@ -120,7 +107,7 @@ html, body {
     gap: 40px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 1099;
+    z-index: 999;
   }
 
   .nav-list.active {
@@ -130,15 +117,15 @@ html, body {
   .nav-list li a {
     color: white;
     font-size: 2rem;
-    transition: color 0.3s ease;
+    font-family: Avenir, sans-serif;
   }
 
   .nav-list li a:hover {
-    color: #007bff;
+    color: #007bff; /* blau beim Hover */
   }
 }
 
-/* Hero Video Section */
+/* Video Hero Section */
 .video-hero {
   position: relative;
   width: 100%;
@@ -153,6 +140,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
 .video-overlay {
@@ -165,12 +153,13 @@ html, body {
   z-index: 2;
   font-family: 'Avenir', sans-serif;
   padding: 0 20px;
+  user-select: none;
 }
 
 .video-overlay h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
   font-weight: 900;
+  margin-bottom: 10px;
 }
 
 .video-overlay p {
@@ -178,7 +167,7 @@ html, body {
   font-weight: 300;
 }
 
-/* Text nach dem Video */
+/* Abschnitt unter dem Video */
 .project-intro {
   background-color: #000;
   color: #fff;
@@ -211,18 +200,12 @@ html, body {
   font-family: 'Avenir', sans-serif;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .btn-projects:hover {
   background-color: #004488;
   color: #fff;
-}
-
-/* Scroll-Effekt Textfarbe/Background bei Navbar */
-#navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(10px);
-  box-shadow: none;
 }
 
 /* Mobile Schriftgrößen anpassen */
@@ -233,5 +216,22 @@ html, body {
 
   .video-overlay p {
     font-size: 1.2rem;
+  }
+
+  .project-intro {
+    padding: 60px 15px;
+  }
+
+  .project-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-intro p {
+    font-size: 1rem;
+  }
+
+  .btn-projects {
+    padding: 10px 25px;
+    font-size: 1rem;
   }
 }
