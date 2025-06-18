@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leon Rohrwild – Kreativer Filmemacher und Fotograf</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet" />
@@ -14,9 +14,8 @@
   <header id="navbar">
     <div class="nav-container">
       <div class="logo"><a href="index.html">LR</a></div>
-      
       <nav class="nav-wrapper">
-        <ul class="nav-list" id="nav-list">
+        <ul id="nav-list" class="nav-list">
           <li><a href="videos.html">Videos</a></li>
           <li><a href="fotos.html">Fotos</a></li>
           <li><a href="ueber.html">Über</a></li>
@@ -24,9 +23,7 @@
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
-
-      <!-- Hamburger Menü -->
-      <button class="menu-toggle" id="mobile-menu" aria-label="Menü öffnen">&#9776;</button>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Navigation öffnen">&#9776;</button>
     </div>
   </header>
 
@@ -42,7 +39,7 @@
     </div>
   </section>
 
-  <!-- Abschnitt unter Video -->
+  <!-- Neuer Abschnitt -->
   <section class="project-intro">
     <h2>Ob Outdoor, Freizeit, Sport, Events oder Design</h2>
     <p>Als Filmemacher und Fotograf realisiere ich kreative Foto- und Videoprojekte für Kampagnen, Werbefilme, Autos, Porträts und vieles mehr.</p>
@@ -50,17 +47,23 @@
   </section>
 
   <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navList = document.getElementById('nav-list');
 
-    mobileMenu.addEventListener('click', () => {
-      navList.classList.toggle('active');
-    });
+      mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+      });
 
-    // Schließt Menü beim Klick auf Link (optional)
-    navList.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('active');
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+        });
+      });
+
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
       });
     });
   </script>
