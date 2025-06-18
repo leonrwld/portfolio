@@ -1,8 +1,6 @@
 /* Grund-Reset */
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0; height: 100%;
   font-family: Avenir, sans-serif;
   background-color: #f0f0f0;
   color: black;
@@ -12,18 +10,10 @@ html, body {
 /* Navigation */
 #navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: white;
-  transition: background-color 0.3s ease;
-  z-index: 1000;
+  top: 0; left: 0; right: 0;
+  background: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(10px);
-  box-shadow: none;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -36,6 +26,7 @@ html, body {
   position: relative;
 }
 
+/* Logo */
 .logo a {
   font-weight: bold;
   font-size: 1.5rem;
@@ -59,10 +50,11 @@ html, body {
 }
 
 .nav-list li a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
@@ -70,12 +62,17 @@ html, body {
   color: #003366;
 }
 
-/* Hamburger Menü: Nur mobil sichtbar */
+/* Hamburger Menü - standard verstecken */
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
   color: black;
+  padding: 5px 10px;
+  border-radius: 4px;
+  user-select: none;
 }
 
 /* Mobile Styles */
@@ -85,7 +82,7 @@ html, body {
     display: none;
   }
 
-  /* Hamburger Menü sichtbar, rechtsbündig mittig im weißen Header */
+  /* Hamburger Menü sichtbar, rechts oben, mittig vertikal neben LR */
   .menu-toggle {
     display: block;
     position: absolute;
@@ -93,13 +90,10 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
     background: white;
-    padding: 5px 12px;
-    border-radius: 4px;
-    user-select: none;
     z-index: 1100;
   }
 
-  /* Mobile Navigation - schwarze Vollbildleiste von rechts */
+  /* Mobile Nav-Liste: fullscreen schwarz, rechts reingeschoben */
   .nav-list {
     position: fixed;
     top: 0;
@@ -114,14 +108,16 @@ html, body {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1099;
+    margin: 0;
     padding: 0;
   }
 
+  /* Wenn aktiv, schiebe rein */
   .nav-list.active {
     transform: translateX(0%);
   }
 
-  /* Link-Stil mobile */
+  /* Mobile Links groß weiß */
   .nav-list li a {
     color: white;
     font-size: 2rem;
@@ -142,8 +138,7 @@ html, body {
 
 .video-hero video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -151,8 +146,7 @@ html, body {
 
 .video-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
