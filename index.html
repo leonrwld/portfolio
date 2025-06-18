@@ -16,7 +16,7 @@
       <div class="logo"><a href="index.html">LR</a></div>
       
       <nav class="nav-wrapper">
-        <ul class="nav-list">
+        <ul class="nav-list" id="nav-list">
           <li><a href="videos.html">Videos</a></li>
           <li><a href="fotos.html">Fotos</a></li>
           <li><a href="ueber.html">Über</a></li>
@@ -25,7 +25,8 @@
         </ul>
       </nav>
 
-      <div class="menu-toggle" id="mobile-menu" aria-label="Menü öffnen">&#9776;</div>
+      <!-- Hamburger Menü -->
+      <button class="menu-toggle" id="mobile-menu" aria-label="Menü öffnen">&#9776;</button>
     </div>
   </header>
 
@@ -49,28 +50,19 @@
   </section>
 
   <script>
-    const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('.nav-list');
+    const navList = document.getElementById('nav-list');
 
-    // Hintergrund beim Scroll
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Mobile Menü Toggle
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
 
-    // Farbe beim Anklicken für kurze Zeit
+    // Schließt Menü beim Klick auf Link (optional)
     navList.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        // Farbwechsel für Klick-Feedback (bei Mobil)
         navList.classList.remove('active');
       });
     });
   </script>
-
 </body>
 </html>
