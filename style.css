@@ -36,8 +36,8 @@ html, body {
   justify-content: flex-start;
   position: relative;
   gap: 20px;
-  height: 60px; /* fixe Höhe für Navbar */
-  box-sizing: border-box;
+  background-color: white; /* NEU: Hintergrund für die Leiste */
+  z-index: 1100; /* NEU: höher als Video etc. */
 }
 
 .logo a {
@@ -45,7 +45,6 @@ html, body {
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  line-height: 1;
 }
 
 /* Navigation Wrapper */
@@ -61,7 +60,6 @@ html, body {
   gap: 40px;
   margin: 0;
   padding: 0;
-  align-items: center;
 }
 
 .nav-list li a {
@@ -69,13 +67,10 @@ html, body {
   color: black;
   font-weight: 500;
   transition: color 0.3s ease;
-  line-height: 1;
 }
 
-.nav-list li a:hover,
-.nav-list li a:focus,
-.nav-list li a.active {
-  color: #007bff; /* blau beim Hover und Aktiv */
+.nav-list li a:hover {
+  color: #003366;
 }
 
 /* Hamburger Menü - standard unsichtbar */
@@ -84,14 +79,13 @@ html, body {
   font-size: 2.5rem;
   cursor: pointer;
   color: black;
-  background: transparent;
+  background: transparent; /* NEU: kein eigener Hintergrund */
   border: none;
   padding: 0;
   margin-left: auto; /* schiebt Hamburger ganz rechts */
   user-select: none;
-  position: relative;
-  z-index: 1500; /* sehr hoch, damit klickbar */
-  line-height: 1;
+  position: relative; /* NEU: für z-index */
+  z-index: 1200; /* NEU: sicher über der nav-container */
 }
 
 /* Mobile Styles */
@@ -101,11 +95,10 @@ html, body {
   }
 
   .menu-toggle {
-    display: block;
+    display: block; /* Hamburger einblenden */
   }
 
   .nav-list {
-    pointer-events: none; /* verhindern Klicks wenn geschlossen */
     position: fixed;
     top: 0;
     right: 0;
@@ -118,13 +111,10 @@ html, body {
     gap: 40px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 1400;
-    margin: 0;
-    padding: 0;
+    z-index: 1099; /* unter Hamburger Button */
   }
 
   .nav-list.active {
-    pointer-events: auto; /* nur wenn offen */
     transform: translateX(0%);
   }
 
@@ -133,9 +123,7 @@ html, body {
     font-size: 2rem;
   }
 
-  .nav-list li a:hover,
-  .nav-list li a:focus,
-  .nav-list li a.active {
+  .nav-list li a:hover {
     color: #007bff;
   }
 }
@@ -148,17 +136,13 @@ html, body {
   overflow: hidden;
 }
 
-.background-video {
+.video-hero video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 1;
 }
 
 .video-overlay {
