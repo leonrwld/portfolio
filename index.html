@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leon Rohrwild – Kreativer Filmemacher und Fotograf</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet" />
@@ -25,7 +25,7 @@
         </ul>
       </nav>
 
-      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <div class="menu-toggle" id="mobile-menu" aria-label="Menü öffnen">&#9776;</div>
     </div>
   </header>
 
@@ -53,14 +53,22 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
 
-    // Navbar Hintergrund bei Scroll
+    // Hintergrund beim Scroll
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Mobile Menü toggle
+    // Mobile Menü Toggle
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
+    });
+
+    // Farbe beim Anklicken für kurze Zeit
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        // Farbwechsel für Klick-Feedback (bei Mobil)
+        navList.classList.remove('active');
+      });
     });
   </script>
 
