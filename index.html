@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leon Rohrwild – Kreativer Filmemacher und Fotograf</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DIN+Pro:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DIN+Pro:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -52,22 +52,25 @@
     const navList = document.querySelector('.nav-list');
     const navLinks = document.querySelectorAll('.nav-list li a');
 
+    // Scroll-Background-Change
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
+    // Mobile Menu toggle
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
 
+    // Bei Klick auf Menü-Link mobile Menu schließen & Link-Farbe ändern
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        if(navList.classList.contains('active')) {
-          navList.classList.remove('active');
-        }
+        navList.classList.remove('active');
+        // Aktive Farbe setzen - für Demo nur visuell
+        navLinks.forEach(l => l.style.color = 'white'); // Reset
+        link.style.color = '#007bff'; // Blau beim Klick
       });
     });
   </script>
-
 </body>
 </html>
