@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leon Rohrwild – Kreativer Filmemacher und Fotograf</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DIN+Pro:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Avenir&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DIN+Pro:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -14,6 +14,7 @@
   <header id="navbar">
     <div class="nav-container">
       <div class="logo"><a href="index.html">LR</a></div>
+
       <nav class="nav-wrapper">
         <ul class="nav-list">
           <li><a href="videos.html">Videos</a></li>
@@ -23,6 +24,7 @@
           <li><a href="impressum.html">Impressum</a></li>
         </ul>
       </nav>
+
       <div class="menu-toggle" id="mobile-menu">&#9776;</div>
     </div>
   </header>
@@ -46,20 +48,25 @@
     <a class="btn-projects" href="videos.html">Projekte</a>
   </section>
 
-  <!-- JavaScript für Menü und Scroll -->
   <script>
-    const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
-
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
 
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
-  </script>
 
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+      });
+    });
+
+    // Scroll-Effekt für Navbar-Hintergrund
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
 </body>
 </html>
