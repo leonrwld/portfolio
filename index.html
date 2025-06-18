@@ -53,12 +53,12 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const navList = document.querySelector('.nav-list');
 
-    // Hintergrundfarbe Navbar bei Scroll
+    // Navbar Hintergrund bei Scroll
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // Menü Toggle auf Mobil
+    // Mobile Menü toggle
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
