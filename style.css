@@ -36,6 +36,8 @@ html, body {
   justify-content: flex-start;
   position: relative;
   gap: 20px;
+  background-color: white; /* NEU: Hintergrund für die Leiste */
+  z-index: 1100; /* NEU: höher als Video etc. */
 }
 
 .logo a {
@@ -77,11 +79,13 @@ html, body {
   font-size: 2.5rem;
   cursor: pointer;
   color: black;
-  background: transparent;
+  background: transparent; /* NEU: kein eigener Hintergrund */
   border: none;
   padding: 0;
   margin-left: auto; /* schiebt Hamburger ganz rechts */
   user-select: none;
+  position: relative; /* NEU: für z-index */
+  z-index: 1200; /* NEU: sicher über der nav-container */
 }
 
 /* Mobile Styles */
@@ -107,7 +111,7 @@ html, body {
     gap: 40px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 1999;
+    z-index: 1099; /* unter Hamburger Button */
   }
 
   .nav-list.active {
