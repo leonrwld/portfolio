@@ -26,14 +26,16 @@ html, body {
   box-shadow: none;
 }
 
+/* Nav-Container: Flexbox mit Logo links, Nav mittig, Hamburger rechts (mobil) */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
+  gap: 20px;
 }
 
 .logo a {
@@ -43,7 +45,7 @@ html, body {
   text-decoration: none;
 }
 
-/* Navigation wrapper Desktop */
+/* Navigation Wrapper */
 .nav-wrapper {
   flex: 1;
   display: flex;
@@ -63,38 +65,33 @@ html, body {
   color: black;
   font-weight: 500;
   transition: color 0.3s ease;
-  cursor: pointer;
 }
 
 .nav-list li a:hover {
   color: #003366;
 }
 
-/* Hamburger (nur mobil) */
+/* Hamburger Menü - standard unsichtbar */
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
   cursor: pointer;
   color: black;
-  background: white;
+  background: transparent;
   border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 0;
+  margin-left: auto; /* schiebt Hamburger ganz rechts */
   user-select: none;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  z-index: 2000;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .nav-wrapper {
-    display: none;
+    display: none; /* Navigation ausblenden */
   }
 
   .menu-toggle {
-    display: block;
+    display: block; /* Hamburger einblenden */
   }
 
   .nav-list {
@@ -159,7 +156,6 @@ html, body {
 .video-overlay h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  font-weight: 900;
 }
 
 .video-overlay p {
@@ -200,7 +196,6 @@ html, body {
   font-family: 'Avenir', sans-serif;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  cursor: pointer;
 }
 
 .btn-projects:hover {
@@ -208,7 +203,7 @@ html, body {
   color: #fff;
 }
 
-/* Scroll Behavior */
+/* Mobile Schriftgrößen anpassen */
 @media (max-width: 768px) {
   .video-overlay h1 {
     font-size: 2.5rem;
