@@ -43,7 +43,7 @@ html, body {
   text-decoration: none;
 }
 
-/* Navigation wrapper Desktop */
+/* Desktop Navigation */
 .nav-wrapper {
   flex: 1;
   display: flex;
@@ -70,7 +70,7 @@ html, body {
   color: #003366;
 }
 
-/* Hamburger Menü (mobil) */
+/* Hamburger Menü: Nur mobil sichtbar */
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
@@ -80,11 +80,12 @@ html, body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-
+  /* Desktop Navigation ausblenden */
   .nav-wrapper {
-    display: none; /* Navigation ausblenden auf Mobil */
+    display: none;
   }
 
+  /* Hamburger Menü sichtbar, rechtsbündig mittig im weißen Header */
   .menu-toggle {
     display: block;
     position: absolute;
@@ -92,12 +93,13 @@ html, body {
     top: 50%;
     transform: translateY(-50%);
     background: white;
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-radius: 4px;
     user-select: none;
     z-index: 1100;
   }
 
+  /* Mobile Navigation - schwarze Vollbildleiste von rechts */
   .nav-list {
     position: fixed;
     top: 0;
@@ -119,6 +121,7 @@ html, body {
     transform: translateX(0%);
   }
 
+  /* Link-Stil mobile */
   .nav-list li a {
     color: white;
     font-size: 2rem;
