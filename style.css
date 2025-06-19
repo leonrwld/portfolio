@@ -9,7 +9,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* ======= NAVIGATION - Schwarz/Weiß & Blau Hover ======= */
+/* ======= NAVIGATION - Schwarz/Weiß & Marineblauer Hover ======= */
 #navbar {
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@ html, body {
   background-color: black !important;
   transition: background-color 0.3s ease;
   z-index: 1000;
-  box-shadow: none; /* Optional Schatten entfernen */
+  box-shadow: none;
 }
 
 #navbar.scrolled {
@@ -48,7 +48,7 @@ html, body {
 
 .logo a:hover,
 .logo a:focus {
-  color: #007bff;
+  color: #004488;
 }
 
 .nav-wrapper {
@@ -74,7 +74,7 @@ html, body {
 
 .nav-list li a:hover,
 .nav-list li a:focus {
-  color: #007bff;
+  color: #004488;
 }
 
 /* ======= HAMBURGER BUTTON ======= */
@@ -94,7 +94,7 @@ html, body {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: #007bff;
+  color: #004488;
 }
 
 /* ======= MOBILE NAVIGATION ======= */
@@ -136,17 +136,16 @@ html, body {
 
   .nav-list li a:hover,
   .nav-list li a:focus {
-    color: #007bff;
+    color: #004488;
   }
 
-  /* Mobile Logo bleibt weiß */
   .logo a {
     color: white !important;
   }
 
   .logo a:hover,
   .logo a:focus {
-    color: #007bff;
+    color: #004488;
   }
 }
 
@@ -156,7 +155,7 @@ html, body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  margin-top: 60px; /* Abstand zur fixierten Navbar */
+  margin-top: 60px;
 }
 
 .video-hero video {
