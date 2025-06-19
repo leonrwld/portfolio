@@ -1,15 +1,16 @@
 /* ======= RESET & GLOBAL ======= */
-html, body {
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
   font-family: Avenir, sans-serif;
   background-color: #f0f0f0;
   color: black;
   scroll-behavior: smooth;
-  
-  /* Platz für die fixe Navbar auf Desktop */
-  padding-top: 60px;
 }
 
 /* ======= NAVIGATION - Schwarz/Weiß & Blau Hover ======= */
@@ -17,7 +18,6 @@ html, body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
   background-color: black !important;
   transition: background-color 0.3s ease;
   z-index: 1000;
@@ -40,7 +40,6 @@ html, body {
   gap: 20px;
   background-color: black !important;
   z-index: 1100;
-  height: 60px;
 }
 
 .logo a {
@@ -104,20 +103,6 @@ html, body {
 
 /* ======= MOBILE NAVIGATION ======= */
 @media (max-width: 768px) {
-  /* Navbar kleiner auf mobil */
-  #navbar {
-    height: 50px;
-  }
-  
-  .nav-container {
-    height: 50px;
-  }
-  
-  /* Weniger padding-top auf mobil */
-  body {
-    padding-top: 50px;
-  }
-
   .menu-toggle {
     display: block;
   }
@@ -149,7 +134,7 @@ html, body {
   }
 
   .nav-list li a {
-    color: white;
+    color: white !important;
     font-size: 2rem;
   }
 
@@ -158,7 +143,6 @@ html, body {
     color: #004488;
   }
 
-  /* Mobile Logo bleibt weiß */
   .logo a {
     color: white !important;
   }
@@ -173,15 +157,9 @@ html, body {
 .video-hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   overflow: hidden;
-  margin-top: 0;
-}
-
-@media (max-width: 768px) {
-  .video-hero {
-    height: calc(100vh - 50px);
-  }
+  margin-top: 0; /* Kein Abstand mehr zur fixierten Navbar */
 }
 
 .video-hero video {
@@ -229,7 +207,7 @@ html, body {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 150px 20px 100px;
+  padding: 100px 20px 100px; /* etwas reduziert, da Video keinen Margin mehr hat */
 }
 
 .project-intro h2 {
