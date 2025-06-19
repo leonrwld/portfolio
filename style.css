@@ -246,6 +246,10 @@ html, body {
   line-height: 1.5;
 }
 
+.impressum-content {
+  margin-top: 160px; /* Abstand nur für Impressum */
+}
+
 .page-content h1 {
   font-family: Avenir, sans-serif;
   text-align: center;
