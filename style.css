@@ -245,3 +245,74 @@ html, body {
   margin-top: 100px;
 }
 
+/*Impressum*/
+.impressum-content {
+  padding: 120px 48px 64px; /* Abstand nach oben wegen Navbar */
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.7;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.impressum-wrapper h1 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.impressum-wrapper h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.impressum-wrapper h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.impressum-wrapper p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.impressum-wrapper a {
+  color: #666;
+  text-decoration: underline;
+}
+
+.impressum-wrapper a:hover {
+  color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .impressum-content {
+    padding: 100px 16px 40px;
+  }
+
+  .impressum-wrapper h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .impressum-wrapper h2 {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+
+  .impressum-wrapper h3 {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .impressum-wrapper p {
+    font-size: 0.95rem;
+  }
+}
