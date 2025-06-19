@@ -246,8 +246,8 @@ html, body {
   line-height: 1.5;
 }
 
-.impressum-content {
-  margin-top: 160px; /* Abstand nur für Impressum */
+.impressum-wrapper {
+  margin-top: 60px; /* Abstand nur für Impressum-Inhalt */
 }
 
 .page-content h1 {
