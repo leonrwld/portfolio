@@ -1,4 +1,4 @@
-/* Grund-Reset */
+/* ======= RESET & GLOBAL ======= */
 html, body {
   height: 100%;
   margin: 0;
@@ -9,7 +9,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+/* ======= NAVIGATION ======= */
 #navbar {
   position: fixed;
   top: 0;
@@ -26,7 +26,6 @@ html, body {
   box-shadow: none;
 }
 
-/* Nav-Container: Flexbox mit Logo links, Nav mittig, Hamburger rechts (mobil) */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -34,10 +33,9 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: relative;
   gap: 20px;
-  background-color: white; /* NEU: Hintergrund für die Leiste */
-  z-index: 1100; /* NEU: höher als Video etc. */
+  background-color: white;
+  z-index: 1100;
 }
 
 .logo a {
@@ -47,7 +45,6 @@ html, body {
   text-decoration: none;
 }
 
-/* Navigation Wrapper */
 .nav-wrapper {
   flex: 1;
   display: flex;
@@ -73,29 +70,31 @@ html, body {
   color: #003366;
 }
 
-/* Hamburger Menü - standard unsichtbar */
+/* ======= HAMBURGER BUTTON ======= */
 .menu-toggle {
   display: none;
   font-size: 2.5rem;
   cursor: pointer;
   color: black;
-  background: transparent; /* NEU: kein eigener Hintergrund */
+  background: transparent;
   border: none;
-  padding: 0;
-  margin-left: auto; /* schiebt Hamburger ganz rechts */
+  margin-left: auto;
   user-select: none;
-  position: relative; /* NEU: für z-index */
-  z-index: 1200; /* NEU: sicher über der nav-container */
+  position: relative;
+  z-index: 1200;
 }
 
-/* Mobile Styles */
+/* ======= MOBILE NAVIGATION ======= */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
   .nav-wrapper {
-    display: flex; /* WICHTIG: Wrapper bleibt sichtbar */
+    justify-content: flex-end;
   }
 
   .nav-list {
-    display: flex;
     position: fixed;
     top: 0;
     right: 0;
@@ -109,9 +108,11 @@ html, body {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1099;
+    display: none;
   }
 
   .nav-list.active {
+    display: flex;
     transform: translateX(0%);
   }
 
@@ -125,46 +126,13 @@ html, body {
   }
 }
 
-  .menu-toggle {
-    display: block; /* Hamburger einblenden */
-  }
-
-  .nav-list {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1099; /* unter Hamburger Button */
-  }
-
-  .nav-list.active {
-    transform: translateX(0%);
-  }
-
-  .nav-list li a {
-    color: white;
-    font-size: 2rem;
-  }
-
-  .nav-list li a:hover {
-    color: #007bff;
-  }
-}
-
-/* Video Hero Section */
+/* ======= VIDEO HERO SECTION ======= */
 .video-hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  margin-top: 60px; /* Abstand zur fixierten Navbar */
 }
 
 .video-hero video {
@@ -184,7 +152,6 @@ html, body {
   text-align: center;
   color: white;
   z-index: 2;
-  font-family: 'Avenir', sans-serif;
   padding: 0 20px;
 }
 
@@ -198,19 +165,27 @@ html, body {
   font-weight: 300;
 }
 
-/* Abschnitt unter dem Video */
+@media (max-width: 768px) {
+  .video-overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .video-overlay p {
+    font-size: 1.2rem;
+  }
+}
+
+/* ======= PROJEKT-INTRO ======= */
 .project-intro {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
-  font-family: 'Avenir', sans-serif;
+  padding: 150px 20px 100px; /* oben mehr Abstand, wegen fixierter Navbar */
 }
 
 .project-intro h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  font-family: 'Avenir', sans-serif;
 }
 
 .project-intro p {
@@ -228,7 +203,6 @@ html, body {
   color: #004488;
   text-decoration: none;
   border-radius: 25px;
-  font-family: 'Avenir', sans-serif;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -236,15 +210,4 @@ html, body {
 .btn-projects:hover {
   background-color: #004488;
   color: #fff;
-}
-
-/* Mobile Schriftgrößen anpassen */
-@media (max-width: 768px) {
-  .video-overlay h1 {
-    font-size: 2.5rem;
-  }
-
-  .video-overlay p {
-    font-size: 1.2rem;
-  }
 }
