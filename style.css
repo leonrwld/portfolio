@@ -239,3 +239,9 @@ html, body {
   background-color: #004488;
   color: #fff;
 }
+
+/*Ueberschriften*/
+.ueberschrift-mit-abstand {
+  margin-top: 4em;
+}
+
