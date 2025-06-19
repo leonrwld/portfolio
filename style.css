@@ -225,12 +225,4 @@ html, body {
   background-color: #fff;
   color: #004488;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-projects:hover {
-  background-color: #004488;
-  color: #fff;
-}
+ 
