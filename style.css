@@ -7,7 +7,7 @@
 
 html, body {
   height: 100%;
-  font-family: Avenir, sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: #f0f0f0;
   color: black;
   scroll-behavior: smooth;
@@ -215,8 +215,9 @@ html, body {
   margin-bottom: 20px;
 }
 
+/* Hier DIN Pro ersetzt durch Google Font 'Barlow' */
 .project-intro p {
-  font-family: 'DIN Pro', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto 30px auto;
