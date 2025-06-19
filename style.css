@@ -9,7 +9,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* ======= NAVIGATION - Schwarz/Weiß & Marineblauer Hover ======= */
+/* ======= NAVIGATION - Schwarz/Weiß & Blau Hover ======= */
 #navbar {
   position: fixed;
   top: 0;
@@ -41,7 +41,7 @@ html, body {
 .logo a {
   font-weight: bold;
   font-size: 1.5rem;
-  color: white !important;
+  color: white;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -67,7 +67,7 @@ html, body {
 
 .nav-list li a {
   text-decoration: none;
-  color: white !important;
+  color: white;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -140,7 +140,7 @@ html, body {
   }
 
   .logo a {
-    color: white !important;
+    color: white;
   }
 
   .logo a:hover,
