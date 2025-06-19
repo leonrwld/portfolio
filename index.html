@@ -65,6 +65,10 @@
         navbar.classList.toggle('scrolled', window.scrollY > 50);
       });
     });
+    mobileMenu.addEventListener('click', () => {
+    navList.classList.toggle('active');
+    document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
+    });
   </script>
 </body>
 </html>
