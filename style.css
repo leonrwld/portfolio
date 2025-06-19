@@ -9,19 +9,19 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* ======= NAVIGATION ======= */
+/* ======= NAVIGATION - Schwarz/Weiß & Blau Hover ======= */
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  background-color: black !important;
   transition: background-color 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: none; /* Optional Schatten entfernen */
 }
 
 #navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(180%) blur(10px);
   box-shadow: none;
 }
@@ -34,15 +34,21 @@ html, body {
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  background-color: white;
+  background-color: black !important;
   z-index: 1100;
 }
 
 .logo a {
   font-weight: bold;
   font-size: 1.5rem;
-  color: black;
+  color: white !important;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover,
+.logo a:focus {
+  color: #007bff;
 }
 
 .nav-wrapper {
@@ -61,13 +67,14 @@ html, body {
 
 .nav-list li a {
   text-decoration: none;
-  color: black;
+  color: white !important;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.nav-list li a:hover {
-  color: #003366;
+.nav-list li a:hover,
+.nav-list li a:focus {
+  color: #007bff;
 }
 
 /* ======= HAMBURGER BUTTON ======= */
@@ -75,13 +82,19 @@ html, body {
   display: none;
   font-size: 2.5rem;
   cursor: pointer;
-  color: black;
+  color: white;
   background: transparent;
   border: none;
   margin-left: auto;
   user-select: none;
   position: relative;
   z-index: 1200;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #007bff;
 }
 
 /* ======= MOBILE NAVIGATION ======= */
@@ -121,7 +134,18 @@ html, body {
     font-size: 2rem;
   }
 
-  .nav-list li a:hover {
+  .nav-list li a:hover,
+  .nav-list li a:focus {
+    color: #007bff;
+  }
+
+  /* Mobile Logo bleibt weiß */
+  .logo a {
+    color: white !important;
+  }
+
+  .logo a:hover,
+  .logo a:focus {
     color: #007bff;
   }
 }
@@ -180,7 +204,7 @@ html, body {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 150px 20px 100px; /* oben mehr Abstand, wegen fixierter Navbar */
+  padding: 150px 20px 100px;
 }
 
 .project-intro h2 {
