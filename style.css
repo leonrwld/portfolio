@@ -155,9 +155,9 @@ html, body {
 .video-hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   overflow: hidden;
-  margin-top: 0; /* entfernt den weißen Spalt */
+  margin-top: 0;
 }
 
 .video-hero video {
