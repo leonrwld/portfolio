@@ -454,7 +454,7 @@ html, body {
   max-width: 100%;
   height: auto;
   margin: 0 auto 2rem;
-  border-radius: 8px;
+  border-radius: 0;
   object-fit: cover;
 }
 
