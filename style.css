@@ -462,7 +462,7 @@ html, body {
 .image-columns {
   display: flex;
   gap: 1rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto 3rem;
   justify-content: center;
@@ -475,9 +475,7 @@ html, body {
   object-fit: cover;
   border-radius: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 0.3s;
+  /* opacity und animation entfernt */
 }
 
 .image-columns img:hover,
