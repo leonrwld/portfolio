@@ -30,7 +30,7 @@
     <section class="section">
       <h1>Kontakt</h1>
       <p class="barlow-text">
-        Du möchtest mit mir zusammenarbeiten oder hast Fragen? Schreib mir gern eine Nachricht per E-Mail oder nutze meine sozialen Kanäle.
+        Du möchtest mit mir zusammenarbeiten oder hast Fragen? Schreib mir gern eine Nachricht per E-Mail, über das Kontaktformular oder auf Instagram.
       </p>
 
       <p style="margin-top: 1.5rem;">
@@ -39,6 +39,29 @@
         <strong>Instagram:</strong>
         <a href="https://www.instagram.com/leonrohrwild/" target="_blank">@leonrohrwild</a>
       </p>
+
+      <hr style="margin: 3rem 0;">
+
+      <h2 style="margin-bottom: 1rem;">Oder schreib mir direkt hier:</h2>
+
+      <form action="https://formsubmit.co/leon.rohrwild@gmail.com" method="POST" class="kontakt-formular">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.leonrohrwild.com/danke.html">
+
+        <label for="vorname">Vorname:</label>
+        <input type="text" id="vorname" name="Vorname" required>
+
+        <label for="nachname">Nachname:</label>
+        <input type="text" id="nachname" name="Nachname" required>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="E-Mail" required>
+
+        <label for="nachricht">Nachricht:</label>
+        <textarea id="nachricht" name="Nachricht" rows="6" required></textarea>
+
+        <button type="submit">Senden</button>
+      </form>
     </section>
   </main>
 
