@@ -434,9 +434,9 @@ html, body {
 
 /* ======= ÜBER-SEITE ======= */
 .page-content {
-  max-width: 900px; /* etwas breiter als Kontakt/Impressum */
-  margin: 2rem auto 4rem;
-  padding: 90px 1rem 1rem;
+  max-width: 900px;
+  margin: 120px auto 4rem; /* 120px Abstand oben für Navbar */
+  padding: 0 1rem 1rem;
   font-family: 'Barlow', sans-serif;
   color: #000;
 }
@@ -446,7 +446,7 @@ html, body {
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #000;
+  color: #000; /* Schwarz */
 }
 
 .ueber-portrait-img {
@@ -454,33 +454,22 @@ html, body {
   max-width: 100%;
   height: auto;
   margin: 0 auto 2rem;
-  border-radius: 0;
+  border-radius: 0; /* Rundungen entfernt */
   object-fit: cover;
 }
 
-.about-text {
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  text-align: center;
-  white-space: pre-line;
-  color: #444;
-}
-
-/* ======= ÜBER-SEITE - BILDER-SECTION ======= */
+/* Bilder-Section */
 .image-columns {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* keine Umbrüche, damit nebeneinander bleiben */
   max-width: 900px;
   margin: 0 auto 3rem;
 }
 
 .image-columns img {
-  flex: 1 1 calc(33.333% - 1rem);
+  flex: 0 0 calc((100% / 3) - 0.66rem); /* 3 Spalten mit Abstand */
   max-width: 100%;
   height: auto;
   object-fit: cover;
@@ -505,16 +494,16 @@ html, body {
   }
 }
 
+/* Responsive: Bilder untereinander auf mobilen Geräten */
 @media (max-width: 768px) {
   .image-columns {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 1.5rem;
   }
 
   .image-columns img {
     flex: none;
     width: 100%;
-    border-radius: 0;
   }
 }
-
