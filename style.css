@@ -362,3 +362,63 @@ html, body {
 .kontakt-formular button:hover {
   background-color: #002a5c;
 }
+
+/* ======= KONTAKT PAGE LAYOUT ======= */
+.page-content {
+  padding: 120px 48px 64px; /* Abstand nach oben wegen fixierter Navbar */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+.page-content h1 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.page-content p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+.page-content a {
+  color: #666;
+  text-decoration: underline;
+}
+
+.page-content a:hover {
+  color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  .page-content {
+    padding: 100px 16px 40px;
+  }
+
+  .page-content h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .page-content h2 {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+
+  .page-content p {
+    font-size: 0.95rem;
+  }
+}
