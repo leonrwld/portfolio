@@ -347,9 +347,9 @@ html, body {
 }
 
 .kontakt-text {
-  font-size: 1.25rem; /* ca. 20px */
+  font-size: 1.5rem; /* ca. 20px */
   font-weight: 800;
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
   color: #444;
   line-height: 1.6;
