@@ -436,9 +436,9 @@ html, body {
 .page-content {
   max-width: 900px; /* etwas breiter als Kontakt/Impressum */
   margin: 2rem auto 4rem;
-  padding: 0 1rem;
+  padding: 120 px 1rem 1rem;
   font-family: 'Barlow', sans-serif;
-  color: #333;
+  color: #000;
 }
 
 .page-content h1 {
@@ -446,7 +446,7 @@ html, body {
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #002a5c;
+  color: #000;
 }
 
 .ueber-portrait-img {
@@ -483,8 +483,8 @@ html, body {
   flex: 1 1 calc(33.333% - 1rem);
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
   object-fit: cover;
+  border-radius: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -514,7 +514,7 @@ html, body {
   .image-columns img {
     flex: none;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 0;
   }
 }
 
