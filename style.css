@@ -461,15 +461,15 @@ html, body {
 /* Bilder-Section */
 .image-columns {
   display: flex;
-  justify-content: space-between;
   gap: 1rem;
-  flex-wrap: nowrap; /* keine Umbrüche, damit nebeneinander bleiben */
+  flex-wrap: nowrap;
   max-width: 900px;
   margin: 0 auto 3rem;
+  justify-content: center;
 }
 
 .image-columns img {
-  flex: 0 0 calc((100% / 3) - 0.66rem); /* 3 Spalten mit Abstand */
+  flex: 0 0 30%;
   max-width: 100%;
   height: auto;
   object-fit: cover;
@@ -488,22 +488,15 @@ html, body {
   cursor: pointer;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Responsive: Bilder untereinander auf mobilen Geräten */
 @media (max-width: 768px) {
   .image-columns {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
   }
 
   .image-columns img {
-    flex: none;
+    flex: 1 1 100%;
     width: 100%;
   }
 }
