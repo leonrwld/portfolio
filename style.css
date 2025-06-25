@@ -436,7 +436,7 @@ html, body {
 .page-content {
   max-width: 900px; /* etwas breiter als Kontakt/Impressum */
   margin: 2rem auto 4rem;
-  padding: 120 px 1rem 1rem;
+  padding: 90px 1rem 1rem;
   font-family: 'Barlow', sans-serif;
   color: #000;
 }
