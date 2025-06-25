@@ -469,6 +469,7 @@ html, body {
   color: #444;
 }
 
+/* ======= ÜBER-SEITE - BILDER-SECTION ======= */
 .image-columns {
   display: flex;
   justify-content: space-between;
@@ -482,11 +483,28 @@ html, body {
   flex: 1 1 calc(33.333% - 1rem);
   max-width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.3s;
 }
 
-/* Mobile: Bilder untereinander */
+.image-columns img:hover,
+.image-columns img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .image-columns {
     flex-direction: column;
@@ -496,5 +514,7 @@ html, body {
   .image-columns img {
     flex: none;
     width: 100%;
+    border-radius: 12px;
   }
 }
+
