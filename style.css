@@ -431,3 +431,70 @@ html, body {
     font-size: 0.95rem;
   }
 }
+
+/* ======= ÜBER-SEITE ======= */
+.page-content {
+  max-width: 900px; /* etwas breiter als Kontakt/Impressum */
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  font-family: 'Barlow', sans-serif;
+  color: #333;
+}
+
+.page-content h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #002a5c;
+}
+
+.ueber-portrait-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  white-space: pre-line;
+  color: #444;
+}
+
+.image-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.image-columns img {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Mobile: Bilder untereinander */
+@media (max-width: 768px) {
+  .image-columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .image-columns img {
+    flex: none;
+    width: 100%;
+  }
+}
