@@ -459,42 +459,36 @@ html, body {
 }
 
 /* Bilder-Section */
+/* ======= ÜBER-SEITE: Action-Bilder nebeneinander (Desktop) & untereinander (mobil) ======= */
 .image-columns {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  flex-wrap: wrap;
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  justify-content: center;
+  margin: 2rem 0;
 }
 
 .image-columns img {
-  flex: 0 0 30%;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* opacity und animation entfernt */
 }
 
-.image-columns img:hover,
-.image-columns img:focus {
-  transform: scale(1.05);
+.image-columns img:hover {
+  transform: scale(1.03);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  outline: none;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   .image-columns {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .image-columns img {
-    flex: 1 1 100%;
-    width: 100%;
+    width: calc(33.333% - 0.67rem);
   }
 }
+
