@@ -456,8 +456,8 @@ html, body {
   color: black;
 }
 
-/* ======= FOOTER ======= */
-.site-footer {
+/* ======= Endinfo ======= */
+.endinfo {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -469,16 +469,16 @@ html, body {
   font-size: 14px;
 }
 
-.site-footer a.instagram-link {
+.endinfo a.instagram-link {
   color: white;
   text-decoration: none;
   font-weight: normal;
   cursor: pointer;
 }
 
-.site-footer a.instagram-link:hover,
-.site-footer a.instagram-link:focus,
-.site-footer a.instagram-link:active {
+.endinfo a.instagram-link:hover,
+.endinfo a.instagram-link:focus,
+.endinfo a.instagram-link:active {
   color: white;
   text-decoration: none;
 }
