@@ -395,6 +395,44 @@ html, body {
   }
 }
 
+/* ======= Kontaktaufruf ======= */
+.contact-cta {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-cta p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn-contact {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #333;
+}
+
 
 /*Impressum*/
 .impressum-content {
