@@ -241,6 +241,49 @@ html, body {
   color: #fff;
 }
 
+.horizontal-gallery {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 2rem 0;
+  margin: 0 auto;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.gallery-track img {
+  flex: 0 0 auto;
+  height: 250px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-track img:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+/* Für Mobilgeräte */
+@media (max-width: 768px) {
+  .gallery-track {
+    gap: 0.5rem;
+  }
+
+  .gallery-track img {
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .horizontal-gallery {
+    padding: 1rem 0;
+  }
+}
 
 
 /*Impressum*/
