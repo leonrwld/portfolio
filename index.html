@@ -154,13 +154,15 @@
 
       // Automatisches Scrollen beim Seiten-Scroll
       window.addEventListener('scroll', () => {
-         const rect = galleryTrack.getBoundingClientRect();
-         if (rect.top < window.innerHeight && rect.bottom > 0) {
-           const scrollSpeed = 0.5;
-           galleryTrack.scrollLeft += scrollSpeed;
-         }
-  });
-</script>
+        const rect = galleryTrack.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          const scrollSpeed = 0.5;
+          galleryTrack.scrollLeft += scrollSpeed;
+          }
+        });
+      }
+    });
+  </script>
 
 
 </body>
