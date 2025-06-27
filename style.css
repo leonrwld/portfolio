@@ -456,6 +456,33 @@ html, body {
   color: black;
 }
 
+/* ======= FOOTER ======= */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.site-footer a.instagram-link {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.site-footer a.instagram-link:hover,
+.site-footer a.instagram-link:focus,
+.site-footer a.instagram-link:active {
+  color: white;
+  text-decoration: none;
+}
+
 
 /*Impressum*/
 .impressum-content {
@@ -762,3 +789,4 @@ html, body {
     height: 200px;
   }
 }
+
