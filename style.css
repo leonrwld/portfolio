@@ -348,8 +348,8 @@ html, body {
 .btn-projects {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #fff;
-  color: #004488;
+  background-color: black;
+  color: white;
   text-decoration: none;
   border-radius: 25px;
   font-weight: bold;
