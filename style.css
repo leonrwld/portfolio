@@ -347,15 +347,13 @@ html, body {
 /* Nutzt bestehendes Button-Design */
 .btn-projects {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: white;
-  color: black;
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #004488;
   text-decoration: none;
+  border-radius: 25px;
   font-weight: bold;
-  border-radius: 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
-  width: auto; /* <-- wichtig: verhindert volle Breite */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-projects:hover {
