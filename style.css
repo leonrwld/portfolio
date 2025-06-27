@@ -258,7 +258,7 @@ html, body {
   flex: 0 0 auto;
   height: 250px;
   width: auto;
-  border-radius: 8px;
+  border-radius: 0;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
