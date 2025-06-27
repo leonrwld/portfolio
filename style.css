@@ -420,13 +420,14 @@ html, body {
 }
 
 .btn-contact {
-  background-color: #000;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 6px;
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #004488;
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-contact:hover {
