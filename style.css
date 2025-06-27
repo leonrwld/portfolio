@@ -687,6 +687,10 @@ html, body {
 }
 
 /* ======= FOTOS-SEITE ======= */
+body.fotos {
+  background-color: white !important;
+}
+
 .white-bg {
   background-color: white;
   color: white;
@@ -728,6 +732,7 @@ html, body {
 .gallery-track {
   display: flex;
   overflow-x: auto;
+  background-color: white;
   scroll-snap-type: x mandatory;
   gap: 1rem;
   scroll-padding-left: 1rem;
