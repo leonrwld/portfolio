@@ -285,6 +285,13 @@ html, body {
   }
 }
 
+.gallery-track {
+  cursor: grab;
+}
+
+.gallery-track.dragging {
+  cursor: grabbing;
+}
 
 /*Impressum*/
 .impressum-content {
