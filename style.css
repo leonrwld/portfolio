@@ -228,20 +228,30 @@ html, body {
   line-height: 1.6;
 }
 
-.btn-projects {
+/* Gemeinsame Button-Basis */
+.btn {
   display: inline-block;
-  padding: 12px 30px;
-  background-color: #fff;
-  color: #004488;
-  text-decoration: none;
-  border-radius: 25px;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: 25px;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
-.btn-projects:hover {
-  background-color: #004488;
-  color: #fff;
+/* 1. Projekte Button */
+.btn-projects {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}
+
+.btn-projects:hover,
+.btn-projects:focus {
+  background-color: black;
+  color: white;
+  border: 2px solid white; /* Rand bleibt weiß */
 }
 
 /* ======= Galerie ======= */
@@ -354,22 +364,25 @@ html, body {
   margin-bottom: 1.5rem;
 }
 
-/* Nutzt bestehendes Button-Design */
-.btn-projects {
-  display: inline-block;
-  padding: 12px 30px;
+/* 2. Über mich Button */
+.btn-about {
   background-color: black;
   color: white;
-  text-decoration: none;
+  border: none;
+  padding-left: 20px;   /* etwas mehr Innenabstand */
+  padding-right: 20px;
+  width: auto;          /* Breite nur so groß wie Inhalt */
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;  /* verhindert Zeilenumbruch */
   border-radius: 25px;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-projects:hover {
-  background-color: #fff;
-  color: #000;
-  border-color: #000;
+.btn-about:hover,
+.btn-about:focus {
+  background-color: white;
+  color: black;
 }
 
 @media (max-width: 768px) {
@@ -422,19 +435,25 @@ html, body {
   margin-bottom: 30px;
 }
 
-.btn-contact {
+/* 3. E-Mail Button */
+.btn-email {
+  background-color: black;
+  color: white;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
   display: inline-block;
-  padding: 12px 30px;
-  background-color: #fff;
-  color: #004488;
-  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
   border-radius: 25px;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-contact:hover {
-  background-color: #333;
+.btn-email:hover,
+.btn-email:focus {
+  background-color: white;
+  color: black;
 }
 
 
