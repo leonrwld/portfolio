@@ -688,11 +688,11 @@ html, body {
 
 /* ======= FOTOS-SEITE ======= */
 body.fotos {
-  background-color: white !important;
+  background-color: rgba(240, 240, 240) !important;
 }
 
 .white-bg {
-  background-color: white;
+  background-color: rgba(240, 240, 240);
   color: white;
   padding: 4rem 2rem;
 }
@@ -732,7 +732,7 @@ body.fotos {
 .gallery-track {
   display: flex;
   overflow-x: auto;
-  background-color: white;
+  background-color: rgba(240, 240, 240);
   scroll-snap-type: x mandatory;
   gap: 1rem;
   scroll-padding-left: 1rem;
