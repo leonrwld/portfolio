@@ -709,15 +709,8 @@ html, body {
 /* ======= FOTOS-SEITE ======= */
 .lotsofphotos {
   background-color: #f0f0f0;
-  padding: 120px 16px 64px;
+  padding: 0px 16px 64px;
   width: 100%;
-}
-
-.lotsofphotos h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: 'Barlow', sans-serif;
 }
 
 /* Grid für Bilder */
@@ -761,8 +754,6 @@ html, body {
     gap: 12px;
   }
 
-  .lotsofphotos h1 {
-    font-size: 2rem;
   }
 }
 
