@@ -726,7 +726,7 @@ html, body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
   transition: transform 0.3s ease;
 }
 .photogroups img:hover {
