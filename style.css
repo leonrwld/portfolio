@@ -456,6 +456,24 @@ html, body {
   color: black;
 }
 
+/* ======= ENDABSCHNITT ======= */
+.endabschnitt {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px 100px; /* etwas reduziert, da Video keinen Margin mehr hat */
+}
+
+
+.endabschnitt p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+
 
 /*Impressum*/
 .impressum-content {
