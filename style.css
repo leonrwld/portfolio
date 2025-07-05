@@ -805,7 +805,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 100;
   text-align: center;
   color: white;
 }
@@ -813,16 +813,6 @@ html, body {
 .video-overlay-2 h1 {
   font-size: 3rem;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .video-overlay-2 h1 {
-    font-size: 2rem;
-  }
-
-  .video-hero-2 {
-    height: 33vh;
-  }
 }
 
 /* ======= VIDEO SECTION ======= */
@@ -869,6 +859,21 @@ html, body {
   text-align: center;
 }
 
+.instagram-media {
+  width: 100% !important;
+  margin: auto !important;
+}
+
+@media (max-width: 768px) {
+  .video-overlay-2 h1 {
+    font-size: 2rem;
+  }
+
+  .video-hero-2 {
+    height: 33vh;
+  }
+}
+
 /* RESPONSIVE: Nur bei kleinen Viewports werden sie untereinander dargestellt */
 @media (max-width: 768px) {
   .video-item {
@@ -877,7 +882,3 @@ html, body {
   }
 }
 
-.instagram-media {
-  width: 100% !important;
-  margin: auto !important;
-}
