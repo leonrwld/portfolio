@@ -768,49 +768,6 @@ html, body {
 
 /*=== VIDEOS-SEITE ===*/
 
-/* ======= VIDEO-SEITE SPEZIFISCH ======= */
-  
-.video-hero-2 {
-  aspect-ratio: 16 / 5;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: 0; /* Kein Abstand mehr zur fixierten Navbar */
-  z-index: 0;
-}
 
-.video-hero-2 video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-  padding: 0 20px;
-}
-
-.video-overlay p {
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
-@media (max-width: 768px)
-
-  .video-overlay p {
-    font-size: 1.2rem;
-  }
-}
 
   
