@@ -773,7 +773,7 @@ html, body {
 .video-hero-2 {
   position: relative;
   width: 100%;
-  height: 33vh; /* Nur ein Drittel der Höhe */
+  height: 33vh; /* Ein Drittel der Höhe */
   overflow: hidden;
   margin-top: 60px; /* Abstand zur fixierten Navbar */
   background-color: black;
@@ -789,7 +789,7 @@ html, body {
   object-fit: cover;
   pointer-events: none;
 }
-  
+
 .banner-video {
   width: 100%;
   height: 100%;
@@ -820,13 +820,13 @@ html, body {
   .video-overlay-2 h1 {
     font-size: 2rem;
   }
-{
+
   .video-hero-2 {
     height: 33vh;
   }
 }
 
-/*Videoaufzählung*/
+/* ======= VIDEO SECTION LIST ======= */
 
 .video-section {
   background-color: black;
@@ -880,4 +880,3 @@ html, body {
   width: 100% !important;
   margin: auto !important;
 }
-
