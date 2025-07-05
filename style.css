@@ -769,22 +769,24 @@ html, body {
 /*=== VIDEOS-SEITE ===*/
 
 /* ======= VIDEO HERO SECTION ======= */
+
 .video-hero-2 {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 33vh; /* Nur ein Drittel der Höhe */
   overflow: hidden;
-  margin-top: 0; /* Kein Abstand mehr zur fixierten Navbar */
-  z-index: 0;
+  margin-top: 60px; /* Abstand zur fixierten Navbar */
+  background-color: black;
 }
 
-.video-hero-2 video-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
+.banner-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -793,38 +795,31 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
   text-align: center;
   color: white;
-  z-index: 2;
-  padding: 0 20px;
 }
 
 .video-overlay-2 h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.video-overlay-2 p {
-  font-size: 1.5rem;
-  font-weight: 300;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .video-overlay-2 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
-  .video-overlay-2 p {
-    font-size: 1.2rem;
+  .video-hero-2 {
+    height: 33vh;
   }
 }
 
 /*Videoaufzählung*/
 
 .video-section {
-  background-color: #000;
-  color: #fff;
-  padding: 100px 20px 100px; /* etwas reduziert, da Video keinen Margin mehr hat */
+  background-color: black;
+  padding: 4rem 1rem;
 }
 
 .video-grid {
@@ -832,30 +827,30 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .video-item {
-  flex: 1 1 300px;
-  max-width: 320px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.video-item iframe {
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  max-width: 480px;
   width: 100%;
-  height: 180px; /* Querformat */
-  border-radius: 12px;
+  text-align: center;
 }
 
-.video-grid.portrait .video-item iframe {
-  height: 320px; /* Hochformat */
+.video-item iframe,
+.video-item blockquote {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.5rem;
 }
 
 .video-title {
-  margin-top: 0.5rem;
+  color: white;
+  margin-top: 0.75rem;
   font-size: 1rem;
-  font-weight: 600;
 }
 
 .instagram-media {
