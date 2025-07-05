@@ -768,58 +768,10 @@ html, body {
 
 /*=== VIDEOS-SEITE ===*/
 
-/* ======= VIDEO HERO SECTION ======= */
-.video-hero-2 {
-  position: relative;
-  width: 100%;
-  height: 33vh;
-  overflow: hidden;
-  margin-top: 60px;
-  background-color: black;
-  z-index: 0;
-}
-
-.video-hero-2 video.banner-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.banner-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.video-overlay-2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  text-align: center;
-  color: white;
-}
-
-.video-overlay-2 h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-/* ======= VIDEO SECTION ======= */
+/* ======= VIDEO-SEITE SPEZIFISCH ======= */
 .video-section {
-  background-color: black;
+  background-color: #000;
   padding: 4rem 1rem;
-  width: 100%;
 }
 
 .video-grid {
@@ -828,173 +780,45 @@ html, body {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 4rem;
-  width: 100%;
 }
 
 .video-item {
-  flex: 0 1 calc(33.333% - 2rem); /* Drei Spalten bei genügend Platz */
-  background-color: #111;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  max-width: 480px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.video-item iframe,
-.video-item blockquote {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border-radius: 0.5rem;
-}
-
-.video-title {
-  color: white;
-  margin-top: 0.75rem;
-  font-size: 1rem;
+  background-color: transparent;
+  width: 30%;
+  min-width: 280px;
+  color: #fff;
   text-align: center;
 }
 
-.instagram-media {
-  width: 100% !important;
-  margin: auto !important;
-}
-
-.video-section {
-  padding: 80px 20px;
-  background-color: #f0f0f0;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 60px auto;
-}
-
-.video-item {
-  background-color: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
 .video-item iframe,
 .video-item blockquote {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   border: none;
 }
 
 .video-title {
-  margin-top: 12px;
+  margin-top: 0.75rem;
   font-size: 1rem;
-  text-align: center;
-  font-weight: 600;
+  color: #ccc;
 }
 
-@media (max-width: 768px) {
-  .video-overlay-2 h1 {
-    font-size: 2rem;
-  }
-
-  .video-hero-2 {
-    height: 33vh;
-  }
+/* Instagram Blockquote: Damit sie nicht herausragen */
+.instagram-media {
+  max-width: 100% !important;
+  margin: 0 auto !important;
 }
 
-/* RESPONSIVE: Nur bei kleinen Viewports werden sie untereinander dargestellt */
 @media (max-width: 768px) {
   .video-item {
-    flex: 0 1 100%;
-    max-width: 100%;
+    width: 100%;
   }
 }
 
-/* ======= Video Hero 2 (für Videos.html) ======= */
-.video-hero-2 {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: 0;
-  z-index: 0;
-}
-
+/* ======= Banner-Video 16:5 (z. B. 1920x600) ======= */
 .banner-video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 5;
   object-fit: cover;
+  display: block;
 }
-
-.video-overlay-2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-
-.video-overlay-2 h1 {
-  font-size: 3rem;
-  font-family: 'Barlow', sans-serif;
-  color: white;
-}
-
-/* ======= Video Grid Layout ======= */
-.video-section {
-  padding: 4rem 2rem;
-  background-color: #f0f0f0;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
-}
-
-.video-item iframe,
-.video-item blockquote {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-}
-
-.video-title {
-  margin-top: 0.8rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #222;
-  font-family: 'Nunito', sans-serif;
-}
-
-/* Mobile Anpassung */
-@media (max-width: 768px) {
-  .video-overlay-2 h1 {
-    font-size: 2.2rem;
-  }
-
-  .video-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .video-item iframe,
-  .video-item blockquote {
-    height: 180px;
-  }
-}
-
-
