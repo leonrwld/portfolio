@@ -769,13 +769,12 @@ html, body {
 /*=== VIDEOS-SEITE ===*/
 
 /* ======= VIDEO HERO SECTION ======= */
-
 .video-hero-2 {
   position: relative;
   width: 100%;
-  height: 33vh; /* Ein Drittel der Höhe */
+  height: 33vh;
   overflow: hidden;
-  margin-top: 60px; /* Abstand zur fixierten Navbar */
+  margin-top: 60px;
   background-color: black;
   z-index: 0;
 }
@@ -826,11 +825,11 @@ html, body {
   }
 }
 
-/* ======= VIDEO SECTION LIST ======= */
-
+/* ======= VIDEO SECTION ======= */
 .video-section {
   background-color: black;
   padding: 4rem 1rem;
+  width: 100%;
 }
 
 .video-grid {
@@ -839,10 +838,11 @@ html, body {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 4rem;
+  width: 100%;
 }
 
 .video-item {
-  flex: 0 1 30%;
+  flex: 0 1 calc(33.333% - 2rem); /* Drei Spalten bei genügend Platz */
   background-color: #111;
   display: flex;
   flex-direction: column;
@@ -851,7 +851,7 @@ html, body {
   border-radius: 0.75rem;
   max-width: 480px;
   width: 100%;
-  text-align: center;
+  box-sizing: border-box;
 }
 
 .video-item iframe,
@@ -869,6 +869,7 @@ html, body {
   text-align: center;
 }
 
+/* RESPONSIVE: Nur bei kleinen Viewports werden sie untereinander dargestellt */
 @media (max-width: 768px) {
   .video-item {
     flex: 0 1 100%;
