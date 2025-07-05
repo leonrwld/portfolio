@@ -26,58 +26,70 @@
     </div>
   </header>
 
-  <section class="section">
-        <h1>Fotos</h1>
-  </section>
+  <main class="page-content">
   
-    <section class="videogrid-section">
-        <div class="videogroups">
-          
-            <!-- Video 1 -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/mpOkL41KSuM" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">Ein Tag mit Wirtschaftsminister Claus Ruhe Madsen</p>
-            </div>
+    <section class="section">
+          <h1>Videos</h1>
+    </section>
+    
+      <section class="lotsofvideos">
+        
+          <div class="videogroups">
+                <!-- Video 1 -->
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/mpOkL41KSuM" frameborder="0" allowfullscreen></iframe>
+                  <p class="video-title">Ein Tag mit Wirtschaftsminister Claus Ruhe Madsen</p>
+                </div>
+    
+                <!-- Video 2 -->
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/uIjipxhFVTE" frameborder="0" allowfullscreen></iframe>
+                  <p class="video-title">International Waterbike Regatta 2023 Kiel</p>
+                </div>
+    
+                <!-- Video 3 -->
+                <div class="video-embed">
+                  <iframe src="https://www.youtube.com/embed/s5RI49S-3Po" frameborder="0" allowfullscreen></iframe>
+                  <p class="video-title">Krängungsversuch der MS Stadt Kiel</p>
+                </div>
+                
+                <!-- Instagram Video 1 -->
+                <div class="video-embed">
+                    <blockquote class="instagram-media"
+                      data-instgrm-permalink="https://www.instagram.com/p/C8uue0uA7E_/"
+                      data-instgrm-version="14">
+                    </blockquote>
+                    <p class="video-title">Kieler Woche 2024</p>
+                </div>
 
-            <!-- Video 2 -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/uIjipxhFVTE" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">International Waterbike Regatta 2023 Kiel</p>
-            </div>
+                <!-- Instagram Video 2 -->
+                <div class="video-embed">
+                    <blockquote class="instagram-media"
+                      data-instgrm-permalink="https://www.instagram.com/reel/DJJJ2jmt8E8/"
+                      data-instgrm-version="14">
+                    </blockquote>
+                    <p class="video-title">Schiffbautechnische Gesellschaft Sprechtag</p>
+                </div>
+    
+                <!-- Instagram Video 3 -->
+                <div class="video-embed">
+                      <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DF7M6x3K0hT/"
+                        data-instgrm-version="14">
+                      </blockquote>
+                      <p class="video-title">UCA Kiel - Schiffsumladung</p>
+                </div>
+          </div>
+    </section>
 
-            <!-- Video 3 -->
-            <div class="video-embed">
-              <iframe src="https://www.youtube.com/embed/s5RI49S-3Po" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">Krängungsversuch der MS Stadt Kiel</p>
-            </div>
-            
-            <!-- Instagram Video 1 -->
-            <div class="video-embed">
-                <blockquote class="instagram-media"
-                  data-instgrm-permalink="https://www.instagram.com/p/C8uue0uA7E_/"
-                  data-instgrm-version="14">
-                </blockquote>
-                <p class="video-title">Kieler Woche 2024</p>
-            </div>
+  </main>
 
-            <!-- Instagram Video 2 -->
-            <div class="video-embed">
-                <blockquote class="instagram-media"
-                  data-instgrm-permalink="https://www.instagram.com/reel/DJJJ2jmt8E8/"
-                  data-instgrm-version="14">
-                </blockquote>
-                <p class="video-title">Schiffbautechnische Gesellschaft Sprechtag</p>
-            </div>
-
-            <!-- Instagram Video 3 -->
-            <div class="video-embed">
-                  <blockquote class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/DF7M6x3K0hT/"
-                    data-instgrm-version="14">
-                  </blockquote>
-                  <p class="video-title">UCA Kiel - Schiffsumladung</p>
-              </div>
-        </div>
+  <!-- Endabschnitt -->
+    <section class="endabschnitt">
+      <p>
+        Kiel, Germany <br>
+        www.leonrohrwild.com <br>
+        © Leon Rohrwild</p>
     </section>
 
   <script>
@@ -92,6 +104,14 @@
     mobileMenu.addEventListener('click', () => {
       navList.classList.toggle('active');
     });
+
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+    
   </script>
 
    <!-- Instagram Embed Script -->
