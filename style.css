@@ -772,66 +772,45 @@ html, body {
   
 .video-hero-2 {
   aspect-ratio: 16 / 5;
-  height: auto;
   position: relative;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
-  margin-top: 0;
+  margin-top: 0; /* Kein Abstand mehr zur fixierten Navbar */
   z-index: 0;
 }
-  
-.video-section {
-  background-color: black;
-  padding: 4rem 1rem;
-  coor: white;
-}
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.video-item {
-  background-color: transparent;
-  width: 30%;
-  min-width: 280px;
-  color: white;
-  text-align: center;
-}
-
-.video-item iframe,
-.video-item blockquote {
+.video-hero-2 video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
-.video-title {
-  margin-top: 0.75rem;
-  font-size: 1rem;
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: white;
+  z-index: 2;
+  padding: 0 20px;
 }
 
-/* Instagram Blockquote: Damit sie nicht herausragen */
-.instagram-media {
-  max-width: 100% !important;
-  margin: 0 auto !important;
+.video-overlay p {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
-/* Mobile Anpassung */
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px)
 
-  .video-item {
-    padding: 0.5rem;
-  }
-
-  .video-title {
-    font-size: 0.95rem;
+  .video-overlay p {
+    font-size: 1.2rem;
   }
 }
+
   
