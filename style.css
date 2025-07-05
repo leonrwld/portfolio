@@ -413,8 +413,8 @@ html, body {
 
 /* ======= Kontaktaufruf ======= */
 .contact-cta {
-  background-color: #fff;
-  color: #000;
+  background-color: white;
+  color: black;
   text-align: center;
   padding: 80px 20px;
 }
@@ -458,8 +458,8 @@ html, body {
 
 /* ======= ENDABSCHNITT ======= */
 .endabschnitt {
-  background-color: #000;
-  color: #fff;
+  background-color: black;
+  color: white;
   text-align: center;
   padding: 100px 20px 100px; /* etwas reduziert, da Video keinen Margin mehr hat */
 }
@@ -519,7 +519,7 @@ html, body {
 }
 
 .impressum-wrapper a:hover {
-  color: #000;
+  color: black;
 }
 
 @media screen and (max-width: 600px) {
@@ -569,7 +569,7 @@ html, body {
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  background-color: #fff;
+  background-color: white;
 }
 
 .kontakt-formular input:focus,
@@ -591,7 +591,7 @@ html, body {
   margin-top: 1rem;
   padding: 12px 20px;
   background-color: #004488;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 25px;
   font-size: 1rem;
@@ -641,7 +641,7 @@ html, body {
 }
 
 .page-content a:hover {
-  color: #000;
+  color: black;
 }
 
 @media screen and (max-width: 600px) {
@@ -670,7 +670,7 @@ html, body {
   margin: 120px auto 4rem; /* 120px Abstand oben für Navbar */
   padding: 0 1rem 1rem;
   font-family: 'Barlow', sans-serif;
-  color: #000;
+  color: black;
 }
 
 .page-content h1 {
@@ -678,7 +678,7 @@ html, body {
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #000; /* Schwarz */
+  color: black; 
 }
 
 .ueber-portrait-img {
