@@ -769,7 +769,7 @@ html, body {
 /* ======= VIDEOS-SEITE ======= */
   
 .lotsofvideos {
-  background-color: #f0f0f0; /* Hintergrundfarbe an die Fotos-Seite anpassen, wenn gewünscht */
+  background-color: #f0f0f0; /* Hintergrundfarbe an die Fotos-Seite anpassen */
   padding: 0px 16px 64px;
   width: 100%;
   margin-top: 0;
@@ -779,32 +779,29 @@ html, body {
 
 .videogroups {
   display: grid;
+  /* Dies ist die Standardeinstellung für größere Bildschirme und passt sich dynamisch an. */
+  /* minmax(280px, 1fr) sorgt dafür, dass jedes Video mindestens 280px breit ist. */
+  /* Erhöhe 280px, wenn die Videos zu klein erscheinen, oder reduziere es für mehr Videos pro Reihe. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px; /* Abstand zwischen den Videos */
   padding: 2rem 0; /* Vertikaler Abstand */
-  max-width: 1200px; /* Maximale Breite für die Videogruppe auf großen Bildschirmen */
+  max-width: 1200px; /* Maximale Breite für die Videogruppe */
   margin: 0 auto; /* Zentrierung der Videogruppe */
 }
 
-/* Standard für Mobilgeräte (unter 769px) - eine Spalte */
-.videogroups {
-  grid-template-columns: 1fr;
-  gap: 12px; /* Etwas kleinerer Abstand auf Mobilgeräten */
-  padding: 1rem; /* Etwas Polsterung an den Seiten für Mobilgeräte */
-}
-
-/* Desktop-Ansicht (ab 769px) - drei Spalten */
-@media (min-width: 769px) {
+/* Mobile Optimierung (unter 769px) - eine Spalte */
+@media (max-width: 768px) {
   .videogroups {
-    grid-template-columns: repeat(3, 1fr); /* Drei gleichgroße Spalten */
-    gap: 16px; /* Standardabstand für Desktop */
-    padding: 2rem 0; /* Vertikaler Abstand für Desktop */
+    grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
+    gap: 12px; /* Etwas kleinerer Abstand auf Mobilgeräten */
+    padding: 1rem; /* Polsterung an den Seiten für Mobilgeräte */
   }
 }
 
 .video-embed {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube (Höhe ist 56.25% der Breite) */
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube */
   height: 0;
   overflow: hidden;
   background-color: #000;
@@ -827,12 +824,11 @@ html, body {
 }
 
 /* Spezielle Anpassung für Instagram Embeds */
+/* Instagram-Videos haben oft ein anderes Seitenverhältnis, passe 'padding-bottom' an. */
+/* Für 1:1 (quadratisch) verwende 100%. Für 4:5 (hochformatig) verwende 125%. */
 .video-embed blockquote.instagram-media {
-  padding-bottom: 120%; /* Kann angepasst werden, z.B. 100% für quadratisch, 125% für 4:5 */
-  height: auto; /* Instagram kümmert sich um die Höhe */
-  position: relative; /* Wichtig für Instagram, da es selbst ein Layout hat */
+  padding-bottom: 120%; /* Beispiel für ein hochformatigeres Instagram-Video */
 }
-
 
 .video-title {
   text-align: center;
@@ -841,5 +837,4 @@ html, body {
   color: #333;
   font-family: 'Nunito', sans-serif;
 }
-
   
