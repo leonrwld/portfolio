@@ -767,41 +767,77 @@ html, body {
 
 
 /* ======= VIDEOS-SEITE ======= */
+  
 .lotsofvideos {
- background-color: black;
+  background-color: black; 
   padding: 0px 16px 64px;
-  width: 100%
-  margin-top: 0px;
+  width: 100%;
+  margin-top: 0;
   padding-top: 0;
+  border-radius: 0;
 }
 
 .videogroups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Für Desktop: 3 Spalten, die sich automatisch anpassen, mit einer Mindestbreite von 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
   padding: 2rem 0;
+  max-width: 1200px; /* Optional: Maximale Breite für die Videogruppe festlegen */
+  margin: 0 auto; /* Optional: Zentrierung der Videogruppe */
 }
 
-.video-embed iframe {
+.video-embed {
+  position: relative; /* Wichtig für das Aspektverhältnis des iframes */
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis (Höhe ist 56.25% der Breite) */
+  height: 0;
+  overflow: hidden; /* Verhindert Überlauf, falls der Inhalt größer ist */
+  background-color: white; /* Schwarzer Hintergrund für Ladezeiten */
+  border-radius: 0; /* Entfernt jegliche Rundungen, wenn nicht gewünscht */
+  transition: transform 0.3s ease; /* Übergang für Hover-Effekt */
+}
+
+.video-embed:hover {
+  transform: scale(1.02); /* Leichter Zoom-Effekt beim Hovern */
+}
+
+.video-embed iframe,
+.video-embed blockquote.instagram-media { /* Instagram-Blockquote auch anpassen */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  aspect-ratio: 16 / 9;
   border: none;
-  border-radius: 0;
-  display: block;
 }
 
-/* Instagram braucht oft etwas mehr Höhe */
-.video-embed.instagram iframe {
-  aspect-ratio: 9 / 16;
+.video-title {
+  text-align: center;
+  margin-top: 8px; /* Abstand zum Video */
+  font-size: 0.95rem;
+  color: #333; /* Dunklere Textfarbe für bessere Lesbarkeit */
+  font-family: 'Nunito', sans-serif;
 }
 
+
+/* Mobile Optimierung */
 @media (max-width: 768px) {
   .videogroups {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
     gap: 12px;
+    padding: 1rem; /* Etwas Polsterung an den Seiten für Mobilgeräte */
+  }
+
+  .video-embed {
+    padding-bottom: 56.25%; /* 16:9 Aspektverhältnis beibehalten für YouTube */
+  }
+
+  /* Spezielle Anpassung für Instagram auf Mobilgeräten, da es oft ein anderes Seitenverhältnis hat */
+  .video-embed blockquote.instagram-media {
+    padding-bottom: 120%; /* Beispielhaft für 4:5 oder ähnliches Instagram-Format. Möglicherweise musst du dies anpassen, je nachdem, wie deine Instagram-Videos aussehen. */
+    height: auto; /* Erlaube Instagram, seine eigene Höhe zu bestimmen */
   }
 }
-
 
   
