@@ -769,7 +769,7 @@ html, body {
 /* ======= VIDEOS-SEITE ======= */
   
 .lotsofvideos {
-  background-color: black; 
+  background-color: #f0f0f0; /* Hintergrundfarbe an die Fotos-Seite anpassen, wenn gewünscht */
   padding: 0px 16px 64px;
   width: 100%;
   margin-top: 0;
@@ -779,31 +779,45 @@ html, body {
 
 .videogroups {
   display: grid;
-  /* Für Desktop: 3 Spalten, die sich automatisch anpassen, mit einer Mindestbreite von 250px */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  padding: 2rem 0;
-  max-width: 1200px; /* Optional: Maximale Breite für die Videogruppe festlegen */
-  margin: 0 auto; /* Optional: Zentrierung der Videogruppe */
+  gap: 16px; /* Abstand zwischen den Videos */
+  padding: 2rem 0; /* Vertikaler Abstand */
+  max-width: 1200px; /* Maximale Breite für die Videogruppe auf großen Bildschirmen */
+  margin: 0 auto; /* Zentrierung der Videogruppe */
+}
+
+/* Standard für Mobilgeräte (unter 769px) - eine Spalte */
+.videogroups {
+  grid-template-columns: 1fr;
+  gap: 12px; /* Etwas kleinerer Abstand auf Mobilgeräten */
+  padding: 1rem; /* Etwas Polsterung an den Seiten für Mobilgeräte */
+}
+
+/* Desktop-Ansicht (ab 769px) - drei Spalten */
+@media (min-width: 769px) {
+  .videogroups {
+    grid-template-columns: repeat(3, 1fr); /* Drei gleichgroße Spalten */
+    gap: 16px; /* Standardabstand für Desktop */
+    padding: 2rem 0; /* Vertikaler Abstand für Desktop */
+  }
 }
 
 .video-embed {
-  position: relative; /* Wichtig für das Aspektverhältnis des iframes */
+  position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis (Höhe ist 56.25% der Breite) */
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube (Höhe ist 56.25% der Breite) */
   height: 0;
-  overflow: hidden; /* Verhindert Überlauf, falls der Inhalt größer ist */
-  background-color: white; /* Schwarzer Hintergrund für Ladezeiten */
-  border-radius: 0; /* Entfernt jegliche Rundungen, wenn nicht gewünscht */
-  transition: transform 0.3s ease; /* Übergang für Hover-Effekt */
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
 .video-embed:hover {
-  transform: scale(1.02); /* Leichter Zoom-Effekt beim Hovern */
+  transform: scale(1.02);
 }
 
 .video-embed iframe,
-.video-embed blockquote.instagram-media { /* Instagram-Blockquote auch anpassen */
+.video-embed blockquote.instagram-media {
   position: absolute;
   top: 0;
   left: 0;
@@ -812,32 +826,20 @@ html, body {
   border: none;
 }
 
-.video-title {
-  text-align: center;
-  margin-top: 8px; /* Abstand zum Video */
-  font-size: 0.95rem;
-  color: #333; /* Dunklere Textfarbe für bessere Lesbarkeit */
-  font-family: 'Nunito', sans-serif;
+/* Spezielle Anpassung für Instagram Embeds */
+.video-embed blockquote.instagram-media {
+  padding-bottom: 120%; /* Kann angepasst werden, z.B. 100% für quadratisch, 125% für 4:5 */
+  height: auto; /* Instagram kümmert sich um die Höhe */
+  position: relative; /* Wichtig für Instagram, da es selbst ein Layout hat */
 }
 
 
-/* Mobile Optimierung */
-@media (max-width: 768px) {
-  .videogroups {
-    grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
-    gap: 12px;
-    padding: 1rem; /* Etwas Polsterung an den Seiten für Mobilgeräte */
-  }
-
-  .video-embed {
-    padding-bottom: 56.25%; /* 16:9 Aspektverhältnis beibehalten für YouTube */
-  }
-
-  /* Spezielle Anpassung für Instagram auf Mobilgeräten, da es oft ein anderes Seitenverhältnis hat */
-  .video-embed blockquote.instagram-media {
-    padding-bottom: 120%; /* Beispielhaft für 4:5 oder ähnliches Instagram-Format. Möglicherweise musst du dies anpassen, je nachdem, wie deine Instagram-Videos aussehen. */
-    height: auto; /* Erlaube Instagram, seine eigene Höhe zu bestimmen */
-  }
+.video-title {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
 }
 
   
