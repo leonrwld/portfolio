@@ -727,7 +727,7 @@ html, body {
 /* ======= FOTOS-SEITE ======= */
 .lotsofphotos {
   background-color: #f0f0f0;
-  padding: 0px 16px 64px;
+  padding: 0px 8px 64px;
   width: 100%;
   margin-top: 0;
   padding-top: 0;
@@ -817,8 +817,8 @@ html, body {
 /* ======= DESKTOP: max. 4 Bilder in einer Reihe ======= */
 @media (min-width: 1024px) {
   .photo-grid {
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 10px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 4px;
   }
 }
 
