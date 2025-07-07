@@ -776,23 +776,24 @@ html, body {
   border-radius: 0;
 }
 
-.videogroups {
+/* Erhöhte Spezifität für Desktop-Layout */
+/* Hier wird die Regel für .videogroups innerhalb von .lotsofvideos definiert */
+.lotsofvideos .videogroups {
   display: grid;
-  /* Standard für Desktop: 3 Spalten nebeneinander */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px; /* Abstand zwischen den Videos */
-  padding: 2rem 0; /* Vertikaler Abstand */
-  max-width: 1200px; /* Maximale Breite für die Videogruppe auf großen Bildschirmen */
-  margin: 0 auto; /* Zentrierung der gesamten Videogruppe auf der Seite */
-  justify-items: center; /* Zentriert die einzelnen Video-Elemente horizontal in ihren Grid-Zellen */
-  align-items: start; /* Richtet die Elemente oben in ihrer Zelle aus */
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten auf dem Desktop */
+  gap: 16px;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: start;
 }
 
-/* Stil für jedes einzelne Video-Element (YouTube und Instagram) */
+/* Stil für jedes einzelne Video-Element */
 .video-embed {
   position: relative;
-  width: 100%; /* Das Video nimmt die volle Breite seiner Grid-Zelle ein */
-  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube-Videos (Höhe / Breite * 100) */
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube */
   height: 0;
   overflow: hidden;
   background-color: #000;
@@ -814,24 +815,17 @@ html, body {
   border: none;
 }
 
-/* Spezielle Anpassung für Instagram Embeds */
-/* Passe `padding-bottom` an das typische Seitenverhältnis deiner Instagram-Videos an:
-   - 100% für quadratisch (1:1)
-   - 125% für hochformatig (4:5)
-   - 56.25% für Breitbild (16:9)
-*/
 .video-embed blockquote.instagram-media {
-  padding-bottom: 120%; /* Beispiel: Wenn Instagram-Videos tendenziell hochformatiger sind */
-  /* Das `!important` kann hier helfen, falls Instagram's eigenes Script Stile überschreibt. */
-  height: auto !important; /* Wichtig, damit das padding-bottom korrekt angewendet wird */
-  min-height: 100% !important; /* Stellt sicher, dass es den Bereich ausfüllt */
-  display: flex; /* Erforderlich für justify-content und align-items */
-  justify-content: center; /* Zentriert den Instagram-Inhalt horizontal */
-  align-items: center; /* Zentriert den Instagram-Inhalt vertikal */
+  padding-bottom: 120%; /* Anpassen, wenn nötig */
+  height: auto !important;
+  min-height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .video-title {
-  text-align: center; /* Zentriert den Text unter dem Video */
+  text-align: center;
   margin-top: 8px;
   font-size: 0.95rem;
   color: black;
@@ -840,20 +834,20 @@ html, body {
 
 /* Mobile Optimierung (Bildschirme bis 768px Breite) */
 @media (max-width: 768px) {
-  .videogroups {
+  /* Spezifität hier beibehalten, da sie die Desktop-Regel überschreiben muss */
+  .lotsofvideos .videogroups { /* Auch hier die erhöhte Spezifität */
     grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
-    gap: 24px; /* Etwas größerer Abstand zwischen den Videos */
-    padding: 1rem; /* Polsterung an den Seiten für Mobilgeräte */
-    justify-items: center; /* Zentriert die einzelnen Video-Elemente horizontal in ihrer einzigen Spalte */
+    gap: 24px;
+    padding: 1rem;
+    justify-items: center;
   }
 
   .video-embed {
-    width: 90%; /* Videos nehmen 90% der Breite der mobilen Ansicht ein */
-    max-width: 400px; /* Begrenzt die maximale Breite des Videos auf Mobilgeräten */
-    margin: 0 auto; /* Zentriert das Video innerhalb der 90% Breite */
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  /* Sicherstellen, dass der Titel auch auf Mobilgeräten zentriert ist */
   .video-title {
     text-align: center;
   }
