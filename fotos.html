@@ -76,6 +76,12 @@
         © Leon Rohrwild</p>
     </section>
 
+  <!-- Lightbox-Overlay -->
+    <div id="lightbox" class="lightbox">
+      <span class="close-btn">&times;</span>
+      <img class="lightbox-img" src="" alt="Großansicht" />
+    </div>
+  
   <script>
     const navbar = document.getElementById('navbar');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -96,6 +102,36 @@
         document.body.style.overflow = 'auto';
       });
     });
+
+    // Lightbox-Logik
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.close-btn');
+  const allImages = document.querySelectorAll('.photogroups img');
+
+  allImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Scrollen deaktivieren
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+    document.body.style.overflow = 'auto';
+  });
+
+  // Optional: ESC-Taste zum Schließen
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      document.body.style.overflow = 'auto';
+    }
+  });
+    
   </script>
 </body>
 </html>
