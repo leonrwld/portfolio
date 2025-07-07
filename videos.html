@@ -114,9 +114,13 @@
           content.innerHTML = embedCode;
           overlay.style.display = 'flex';
 
-          if (type === 'instagram') {
-            window.instgrm?.Embeds.process();
-          }
+         if (type === 'instagram') {
+              setTimeout(() => {
+                if (window.instgrm) {
+                  window.instgrm.Embeds.process();
+                }
+              }, 200);
+            }
         });
       });
 
