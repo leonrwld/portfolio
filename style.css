@@ -853,3 +853,48 @@ html, body {
     text-align: center;
   }
 }
+
+/* ======= VIDEOS GRID ======= */
+.videogroups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.video-embed {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-embed iframe,
+.video-embed blockquote {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-title {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Für Mobilgeräte: 1 Video pro Reihe */
+@media (max-width: 768px) {
+  .videogroups {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .video-embed iframe,
+  .video-embed blockquote {
+    aspect-ratio: 16 / 9;
+  }
+}
