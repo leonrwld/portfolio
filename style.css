@@ -929,18 +929,14 @@ html, body {
 
 /* Schließen-X */
 .video-overlay-2 .close-btn {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 2rem;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
   color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 10000;
+  user-select: none;
 }
 
 .video-overlay-2 .close-btn:hover {
