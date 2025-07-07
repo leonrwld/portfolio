@@ -769,74 +769,89 @@ html, body {
 /* ======= VIDEOS-SEITE ======= */
 
 .lotsofvideos {
-  background-color: #f0f0f0;
-  padding: 0px 16px 64px;
-  width: 100%;
-  margin-top: 0;
-  padding-top: 0;
-  border-radius: 0;
+  background-color: #f0f0f0;
+  padding: 0px 16px 64px;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  border-radius: 0;
 }
 
 .videogroups {
-  /* Für Desktop: 3 Spalten mit gleichem Abstand */
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Hier wird festgelegt, dass es IMMER 3 Spalten gibt */
+  /* Standard für Desktop: 3 Spalten mit gleichem Abstand */
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px; /* Abstand zwischen den Videos */
   padding: 2rem 0; /* Vertikaler Abstand */
   max-width: 1200px; /* Maximale Breite für die Videogruppe */
   margin: 0 auto; /* Zentrierung der Videogruppe */
+  justify-items: center; /* Zentriert die Elemente horizontal im Grid */
+  align-items: start; /* Richtet die Elemente oben aus */
 }
 
-/* Mobile Optimierung (unter 769px) - eine Spalte */
-@media (max-width: 768px) {
-  .videogroups {
-    grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
-    gap: 12px; /* Etwas kleinerer Abstand auf Mobilgeräten */
-    padding: 1rem; /* Polsterung an den Seiten für Mobilgeräte */
-  }
-}
-
+/* Stil für jedes einzelne Video-Element */
 .video-embed {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube */
-  height: 0;
-  overflow: hidden;
-  background-color: #000;
-  border-radius: 0;
-  transition: transform 0.3s ease;
+  position: relative;
+  width: 100%; /* Macht das Video die volle Breite seiner Grid-Zelle */
+  max-width: 400px; /* Optional: Eine maximale Breite für einzelne Videos auf sehr großen Bildschirmen */
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube-Videos (Höhe / Breite * 100) */
+  height: 0;
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
 .video-embed:hover {
-  transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .video-embed iframe,
 .video-embed blockquote.instagram-media {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Spezielle Anpassung für Instagram Embeds */
-/* Instagram-Videos haben oft ein anderes Seitenverhältnis, passe 'padding-bottom' an. */
-/* Für 1:1 (quadratisch) verwende 100%. Für 4:5 (hochformatig) verwende 125%. */
+/* Instagram-Videos haben oft ein anderes Seitenverhältnis. Passe 'padding-bottom' an, falls nötig.
+   Beispielwerte: 100% für quadratisch, 125% für 4:5 (hochformatig).
+   Das `!important` kann nötig sein, wenn Instagram's eigenes Script Stile überschreibt. */
 .video-embed blockquote.instagram-media {
-  padding-bottom: 120%; /* Beispiel für ein hochformatigeres Instagram-Video. Diesen Wert eventuell anpassen. */
+  padding-bottom: 120%; /* Beispiel für ein hochformatigeres Instagram-Video */
   /* Zentrierung des Instagram-Embeds innerhalb des Rahmens */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .video-title {
-  text-align: center;
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: black;
-  font-family: 'Nunito', sans-serif;
+  text-align: center; /* Zentriert den Text unter dem Video */
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Mobile Optimierung (unter 769px) - eine Spalte und mittig zentriert */
+@media (max-width: 768px) {
+  .videogroups {
+    grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
+    gap: 24px; /* Etwas größerer Abstand zwischen den Videos für bessere Lesbarkeit */
+    padding: 1rem; /* Polsterung an den Seiten für Mobilgeräte */
+    justify-items: center; /* Zentriert die einzelnen Video-Elemente horizontal */
+    align-items: center; /* Zentriert die Elemente vertikal im Grid (hilft bei ungleicher Höhe) */
+  }
+
+  .video-embed {
+    width: 90%; /* Etwas schmaler auf Mobilgeräten, um Rand zu lassen */
+    max-width: 400px; /* Behält eine maximale Breite, auch wenn der Bildschirm größer als 400px ist, aber unter 769px */
+  }
+
+  .video-title {
+    text-align: center; /* Stellt sicher, dass der Titel zentriert bleibt */
+  }
 }
