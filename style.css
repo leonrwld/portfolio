@@ -881,7 +881,7 @@ html, body {
 }
 
 /* Overlay */
-.video-overlay {
+.video-overlay-2 {
   position: fixed;
   top: 0;
   left: 0;
@@ -897,7 +897,7 @@ html, body {
 }
 
 /* X-Schließen Button */
-.video-overlay .close-btn {
+.video-overlay-2 .close-btn {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -908,7 +908,7 @@ html, body {
 }
 
 /* Responsive iframe im Overlay */
-.video-overlay iframe {
+.video-overlay-2 iframe {
   max-width: 90vw;
   max-height: 80vh;
   width: 100%;
