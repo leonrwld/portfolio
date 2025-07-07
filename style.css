@@ -796,6 +796,17 @@ html, body {
   user-select: none;
 }
 
+@media (min-width: 1024px) {
+  .photogroups {
+    width: calc(100vw);
+    max-width: calc(100vw);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 /* Mobile Optimierung */
 @media (max-width: 768px) {
   .lotsofphotos {
