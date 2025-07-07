@@ -915,13 +915,14 @@ html, body {
   aspect-ratio: 16 / 9;
   max-height: 80vh;
   border: none;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 /* Instagram-Blockquote (optional Styling) */
 #videoContent blockquote.instagram-media {
   width: 100% !important;
-  max-width: 540px;
+  max-width: 320px;
+  height: auto;
   margin: auto;
 }
 
