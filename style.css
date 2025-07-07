@@ -855,11 +855,18 @@ html, body {
 
 /* ======= VIDEOS ======= */
 
+/* --- VIDEOGRID --- */
 .videogrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 2rem;
+}
+
+.video-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 .video-item img {
@@ -870,60 +877,85 @@ html, body {
   transition: transform 0.3s ease;
 }
 
+.video-item:hover,
 .video-item:hover img {
   transform: scale(1.05);
 }
 
-/* Overlay */
+/* --- OVERLAY FÜR VIDEOS --- */
 .video-overlay-2 {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.video-overlay-2 iframe {
+/* Zentrierter Bereich für YouTube oder Instagram-Inhalte */
+#videoContent {
   max-width: 90vw;
   max-height: 80vh;
-  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.video-overlay-2 .close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #fff;
+/* Responsive Iframe für YouTube-Videos */
+#videoContent iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 80vh;
   border: none;
-  font-size: 2rem;
-  color: #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border-radius: 12px;
+}
+
+/* Instagram-Blockquote (optional Styling) */
+#videoContent blockquote.instagram-media {
+  width: 100% !important;
+  max-width: 540px;
+  margin: auto;
+}
+
+/* Schließen-X */
+.video-overlay-2 .close-btn {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 48px;
+  color: #ffffff;
   cursor: pointer;
   z-index: 1100;
 }
 
-.video-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  overflow: hidden;
+.video-overlay-2 .close-btn:hover {
+  color: #cccccc;
 }
 
-.video-item:hover {
-  transform: scale(1.03);
-}
-
-
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .videogrid {
     grid-template-columns: 1fr;
+  }
+
+  #videoContent iframe {
+    max-height: 60vh;
+  }
+
+  .video-overlay-2 .close-btn {
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
   }
 }
 
