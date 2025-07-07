@@ -769,31 +769,29 @@ html, body {
 
 .lotsofvideos {
   background-color: #f0f0f0;
-  padding: 0px 16px 64px;
+  /* Top-Padding für den Bereich unter der Navbar, wenn er nicht in .page-content ist */
+  padding: 120px 16px 64px; /* Angepasst: 120px oben für den Abstand zur Navbar */
   width: 100%;
   margin-top: 0;
-  padding-top: 0;
   border-radius: 0;
 }
 
-/* Erhöhte Spezifität für Desktop-Layout */
-/* Hier wird die Regel für .videogroups innerhalb von .lotsofvideos definiert */
-.lotsofvideos .videogroups {
+.videogroups {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 Spalten auf dem Desktop */
-  gap: 16px;
-  padding: 2rem 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-  align-items: start;
+  gap: 16px; /* Abstand zwischen den Videos */
+  padding: 0; /* padding wurde in .lotsofvideos verschoben */
+  max-width: 1200px; /* Maximale Breite für die Videogruppe auf großen Bildschirmen */
+  margin: 0 auto; /* Zentrierung der gesamten Videogruppe auf der Seite */
+  justify-items: center; /* Zentriert die einzelnen Video-Elemente horizontal in ihren Grid-Zellen */
+  align-items: start; /* Richtet die Elemente oben in ihrer Zelle aus */
 }
 
-/* Stil für jedes einzelne Video-Element */
+/* Stil für jedes einzelne Video-Element (YouTube und Instagram) */
 .video-embed {
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube */
+  width: 100%; /* Das Video nimmt die volle Breite seiner Grid-Zelle ein */
+  padding-bottom: 56.25%; /* 16:9 Aspektverhältnis für YouTube-Videos (Höhe / Breite * Breite * 100) */
   height: 0;
   overflow: hidden;
   background-color: #000;
@@ -815,6 +813,7 @@ html, body {
   border: none;
 }
 
+/* Spezielle Anpassung für Instagram Embeds */
 .video-embed blockquote.instagram-media {
   padding-bottom: 120%; /* Anpassen, wenn nötig */
   height: auto !important;
@@ -825,7 +824,7 @@ html, body {
 }
 
 .video-title {
-  text-align: center;
+  text-align: center; /* Zentriert den Text unter dem Video */
   margin-top: 8px;
   font-size: 0.95rem;
   color: black;
@@ -834,8 +833,10 @@ html, body {
 
 /* Mobile Optimierung (Bildschirme bis 768px Breite) */
 @media (max-width: 768px) {
-  /* Spezifität hier beibehalten, da sie die Desktop-Regel überschreiben muss */
-  .lotsofvideos .videogroups { /* Auch hier die erhöhte Spezifität */
+  .lotsofvideos {
+    padding-top: 20px; /* Weniger Abstand oben auf Mobilgeräten */
+  }
+  .videogroups {
     grid-template-columns: 1fr; /* Eine Spalte auf Mobilgeräten */
     gap: 24px;
     padding: 1rem;
