@@ -6,9 +6,13 @@
     <title>Videos – Leon Rohrwild</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header id="navbar">
       <div class="nav-container">
@@ -25,85 +29,107 @@
         <div class="menu-toggle" id="mobile-menu">&#9776;</div>
       </div>
     </header>
-  
+
     <main class="page-content">
       <section class="section">
         <h1>Videos</h1>
       </section>
-  
-        <div class="videogrid">
-          <div class="video-item">
-              <iframe src="https://www.youtube.com/embed/mpOkL41KSuM" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">Ein Tag mit Wirtschaftsminister Claus Ruhe Madsen</p>
-          </div>
-      
-          <div class="video-item">
-              <iframe src="https://www.youtube.com/embed/uIjipxhFVTE" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">International Waterbike Regatta 2023 Kiel</p>
-          </div>
-      
-          <div class="video-item"> 
-              <iframe src="https://www.youtube.com/embed/s5RI49S-3Po" frameborder="0" allowfullscreen></iframe>
-              <p class="video-title">Krängungsversuch der MS Stadt Kiel</p>
-          </div> 
-      
-          <div class="video-item">  
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/C8uue0uA7E_/"
-                data-instgrm-version="14">
-              </blockquote>
-              <p class="video-title">Kieler Woche 2024</p>
-           </div> 
-      
-           <div class="video-item"> 
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/reel/DJJJ2jmt8E8/"
-                data-instgrm-version="14">
-              </blockquote>
-              <p class="video-title">Schiffbautechnische Gesellschaft Sprechtag</p>
-           </div> 
-      
-           <div class="video-item">
-              <blockquote class="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/p/DF7M6x3K0hT/"
-                data-instgrm-version="14">
-              </blockquote>
-              <p class="video-title">UCA Kiel - Schiffsumladung</p>
-            </div> 
-          
+
+      <div class="videogrid">
+        <div class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/mpOkL41KSuM">
+          <img src="Fotos-Webseite/Wirtschaftsminister-Titelbild.jpg" alt="Claus Madsen" />
         </div>
 
+        <div class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/uIjipxhFVTE">
+          <img src="Fotos-Webseite/IWR-Titelbild.jpg" alt="Waterbike Regatta" />
+        </div>
+
+        <div class="video-item" data-type="youtube" data-src="https://www.youtube.com/embed/s5RI49S-3Po">
+          <img src="Fotos-Webseite/Versuch-Titelbild.jpg" alt="MS Stadt Kiel" />
+        </div>
+
+        <div class="video-item" data-type="instagram" data-src="https://www.instagram.com/p/C8uue0uA7E_/">
+          <img src="Fotos-Webseite/Kiwo-Titelbild.jpg" alt="Kieler Woche 2024" />
+        </div>
+
+        <div class="video-item" data-type="instagram" data-src="https://www.instagram.com/reel/DJJJ2jmt8E8/">
+          <img src="Fotos-Webseite/STG-Titelbild.jpg" alt="Sprechtag" />
+        </div>
+
+        <div class="video-item" data-type="instagram" data-src="https://www.instagram.com/p/DF7M6x3K0hT/">
+          <img src="Fotos-Webseite/UCA-Titelbild" alt="UCA Schiffsumladung" />
+        </div>
+      </div>
     </main>
-  
+
     <section class="endabschnitt">
       <p>
-        Kiel, Germany <br>
-        www.leonrohrwild.com <br>
-        © Leon Rohrwild</p>
+        Kiel, Germany <br />
+        www.leonrohrwild.com <br />
+        © Leon Rohrwild
+      </p>
     </section>
-  
+
+    <!-- Overlay Container -->
+    <div class="video-overlay" id="videoOverlay" style="display: none;">
+      <span class="close-btn" onclick="closeOverlay()">×</span>
+      <div id="videoContent"></div>
+    </div>
+
     <script>
       const navbar = document.getElementById('navbar');
       const mobileMenu = document.getElementById('mobile-menu');
       const navList = document.querySelector('.nav-list');
-  
+
       window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
       });
-  
+
       mobileMenu.addEventListener('click', () => {
         navList.classList.toggle('active');
       });
-  
+
       navList.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           navList.classList.remove('active');
           document.body.style.overflow = 'auto';
         });
       });
+
+      // Video overlay
+      const videoItems = document.querySelectorAll('.video-item');
+      const overlay = document.getElementById('videoOverlay');
+      const content = document.getElementById('videoContent');
+
+      videoItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const type = item.dataset.type;
+          const src = item.dataset.src;
+          let embedCode = '';
+
+          if (type === 'youtube') {
+            embedCode = `<iframe width="100%" height="500" src="${src}" frameborder="0" allowfullscreen></iframe>`;
+          } else if (type === 'instagram') {
+            embedCode = `
+              <blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14"></blockquote>
+            `;
+          }
+
+          content.innerHTML = embedCode;
+          overlay.style.display = 'flex';
+
+          if (type === 'instagram') {
+            window.instgrm?.Embeds.process();
+          }
+        });
+      });
+
+      function closeOverlay() {
+        overlay.style.display = 'none';
+        content.innerHTML = '';
+      }
     </script>
-  
+
     <script async src="//www.instagram.com/embed.js"></script>
-  
   </body>
 </html>
