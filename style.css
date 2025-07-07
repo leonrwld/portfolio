@@ -885,6 +885,26 @@ video-grid {
   max-width: 100%;
 }
 
+.video-item blockquote.instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  display: block;
+  min-height: 400px;
+}
+
+.video-item {
+  max-width: 640px;
+  margin: 40px auto;
+}
+
+.videogrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
 /* Optional: Mobile-Optimierung */
 @media screen and (max-width: 768px) {
   .video-grid {
