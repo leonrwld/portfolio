@@ -882,6 +882,7 @@ html, body {
   cursor: pointer;
   transition: transform 0.3s ease;
   overflow: hidden;
+  text-align: center;
 }
 
 .video-item img {
