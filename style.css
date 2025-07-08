@@ -857,7 +857,7 @@ html, body {
 
 .video-page-content {
   background-color: black;
-  padding: 120px 48px 64px; 
+  padding: 0px 48px 64px; 
 }
 
 .close-btn {
@@ -987,7 +987,10 @@ html, body {
   .video-page-content {
     padding: 100px 16px 40px;
   }
-  
+
+  .video.banner {
+    padding-top: 2rem;
+  }
   .videogrid {
     grid-template-columns: 1fr;
     padding-inline: 1.5rem;
