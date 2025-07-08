@@ -871,14 +871,8 @@ html, body {
 }
 
 /* --- VIDEOGRID --- */
-.videos-page {
-  background-color: black;
-}
-
-.videos-page main.page-content {
-  background-color: black;
-}
-
+.videos-page,
+.videos-page main.page-content,
 .videos-page header,
 .videos-page .endabschnitt {
   background-color: black;
@@ -893,6 +887,10 @@ html, body {
 }
 
 .videogrid p {
+  color: white;
+}
+
+.videogrid h1 {
   color: white;
 }
 
