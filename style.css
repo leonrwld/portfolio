@@ -939,10 +939,6 @@ html, body {
   user-select: none;
 }
 
-.video-overlay-2 .close-btn:hover {
-  color: #cccccc;
-}
-
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .videogrid {
