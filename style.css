@@ -871,6 +871,10 @@ html, body {
 }
 
 /* --- VIDEOGRID --- */
+.videos-page main.page-content {
+  background-color: black;
+}
+
 .videogrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
