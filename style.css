@@ -883,10 +883,12 @@ html, body {
 
 .videogrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(224px, 1fr));
-  gap: 20px;
-  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2,5rem;
+  padding-inline: 6vw;
+  padding-block: 3rem;
   background-color: black;
+  justify-items: center;
 }
 
 .videogrid p {
@@ -898,8 +900,9 @@ html, body {
   transition: transform 0.3s ease;
   overflow: hidden;
   text-align: center;
-  width: 50%;
   font-size: 0.9rem;
+  max-width: 320px;
+  width: 100%;
 }
 
 .video-item img {
@@ -972,6 +975,7 @@ html, body {
   
   .videogrid {
     grid-template-columns: 1fr;
+    padding-inline: 1,5rem;
   }
 
   #videoContent iframe {
