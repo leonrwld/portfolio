@@ -898,7 +898,7 @@ html, body {
   transition: transform 0.3s ease;
   overflow: hidden;
   text-align: center;
-  width: 60%;
+  width: 50%;
   font-size: 0.9rem;
 }
 
