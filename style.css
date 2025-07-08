@@ -884,11 +884,12 @@ html, body {
 .videogrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2,5rem;
-  padding-inline: 6vw;
+  gap: 2rem;
+  padding-inline: 20vw;
   padding-block: 3rem;
   background-color: black;
   justify-items: center;
+  row-gap: 1.5rem;
 }
 
 .videogrid p {
@@ -974,7 +975,7 @@ html, body {
   
   .videogrid {
     grid-template-columns: 1fr;
-    padding-inline: 1,5rem;
+    padding-inline: 1.5rem;
   }
 
   #videoContent iframe {
