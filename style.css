@@ -939,6 +939,23 @@ html, body {
   user-select: none;
 }
 
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+  padding: 0;
+  line-height: 1;
+}
+.lightbox-close:hover {
+  color: #ccc;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .videogrid {
