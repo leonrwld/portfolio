@@ -855,6 +855,10 @@ html, body {
 
 /* ======= VIDEOS ======= */
 
+.video-page-content {
+  background-color: black;
+}
+
 .close-btn {
   position: absolute;
   top: 20px;
@@ -871,10 +875,10 @@ html, body {
 }
 
 /* --- VIDEOGRID --- */
+
 .videos-page {
   background-color: black;
 }
-
 
 .videogrid {
   display: grid;
