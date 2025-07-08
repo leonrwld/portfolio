@@ -894,6 +894,7 @@ html, body {
 
 .videogrid p {
   color: white;
+  margin-top: 1rem;
 }
 
 .video-item {
@@ -988,10 +989,7 @@ html, body {
   .video-page-content {
     padding: 100px 16px 40px;
   }
-
-  .video.banner {
-    margin-top: 6rem;
-  }
+  
   .videogrid {
     grid-template-columns: 1fr;
     padding-inline: 1.5rem;
