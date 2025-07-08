@@ -857,6 +857,8 @@ html, body {
 
 .video-page-content {
   background-color: black;
+  padding: 120px 48px 64px; 
+  max-width: 800px;
 }
 
 .close-btn {
@@ -961,6 +963,11 @@ html, body {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
+
+  .video-page-content {
+    padding: 100px 16px 40px;
+  }
+  
   .videogrid {
     grid-template-columns: 1fr;
   }
