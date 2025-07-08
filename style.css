@@ -871,15 +871,16 @@ html, body {
 }
 
 /* --- VIDEOGRID --- */
-.videos-page main.page-content {
-  background-color: black;
-}
-
 .videos-page {
   background-color: black;
 }
 
-.videos-page header {
+.videos-page main.page-content {
+  background-color: black;
+}
+
+.videos-page header,
+.videos-page .endabschnitt {
   background-color: black;
 }
 
