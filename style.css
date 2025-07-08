@@ -973,6 +973,7 @@ html, body {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  margin-top: 2rem;
 }
 
 .video-banner video {
@@ -989,7 +990,7 @@ html, body {
   }
 
   .video.banner {
-    padding-top: 2rem;
+    margin-top: 3rem;
   }
   .videogrid {
     grid-template-columns: 1fr;
