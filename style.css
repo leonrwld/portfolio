@@ -926,7 +926,7 @@ html, body {
 }
 
 /* Responsive Iframe für YouTube-Videos */
-#videoContent iframe {
+#videoContent iframe[src*="youtube.com"] {
   width: 100%;
   max-width: 960px;
   height: auto;
@@ -937,10 +937,12 @@ html, body {
 
 /* Instagram-Blockquote (optional Styling) */
 #videoContent blockquote.instagram-media {
-  max-width: 400px !important;
-  width: 100% !important;
-  margin: auto !important;
-  padding: 0 !important;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 /* --- RESPONSIVE --- */
