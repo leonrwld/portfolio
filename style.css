@@ -875,6 +875,14 @@ html, body {
   background-color: black;
 }
 
+.videos-page {
+  background-color: black;
+}
+
+.videos-page header {
+  background-color: black;
+}
+
 .videogrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
