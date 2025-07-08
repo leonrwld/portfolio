@@ -855,6 +855,21 @@ html, body {
 
 /* ======= VIDEOS ======= */
 
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+  background: transparent;
+  border: none; 
+  padding: 0;
+  line-height: 1;
+}
+
 /* --- VIDEOGRID --- */
 .videogrid {
   display: grid;
@@ -926,19 +941,6 @@ html, body {
   margin: auto !important;
   padding: 0 !important;
 }
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  z-index: 10000;
-  user-select: none;
-}
-
-
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
