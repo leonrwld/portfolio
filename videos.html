@@ -83,54 +83,65 @@
     </div>
 
     <script>
-      const navbar = document.getElementById('navbar');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const navList = document.querySelector('.nav-list');
-      const videoItems = document.querySelectorAll('.video-item');
-      const overlay = document.getElementById('videoOverlay-2');
-      const content = document.getElementById('videoContent');
-
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-      });
-
-      mobileMenu.addEventListener('click', () => {
-        navList.classList.toggle('active');
-      });
-
-      navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navList.classList.remove('active');
-          document.body.style.overflow = 'auto';
+        const navbar = document.getElementById('navbar');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+        const videoItems = document.querySelectorAll('.video-item');
+        const overlay = document.getElementById('videoOverlay-2');
+        const content = document.getElementById('videoContent');
+      
+        window.addEventListener('scroll', () => {
+          navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
-      });
-
-      videoItems.forEach(item => {
-        item.addEventListener('click', () => {
-          const type = item.dataset.type;
-          const src = item.dataset.src;
-          let embedCode = '';
-
-          if (type === 'youtube') {
-            embedCode = `<iframe src="${src}" allowfullscreen></iframe>`;
-          } else if (type === 'instagram') {
-            embedCode = `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 540px; margin: auto;"></blockquote>`;
-          }
-
-          content.innerHTML = embedCode;
-          overlay.style.display = 'flex';
-
-         if (type === 'instagram') {
-              embedCode = `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; margin: auto;"></blockquote>`;
+      
+        mobileMenu.addEventListener('click', () => {
+          navList.classList.toggle('active');
+        });
+      
+        navList.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navList.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          });
+        });
+      
+        videoItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const type = item.dataset.type;
+            const src = item.dataset.src;
+            let embedCode = '';
+      
+            if (type === 'youtube') {
+              embedCode = `<iframe src="${src}" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>`;
+            } else if (type === 'instagram') {
+              embedCode = `
+                <blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; margin: auto;"></blockquote>
+              `;
             }
+      
+            content.innerHTML = embedCode;
+            overlay.style.display = 'flex';
+      
+            // Wenn Instagram, dann Embed-Script neu laden
+            if (type === 'instagram') {
+              if (window.instgrm) {
+                window.instgrm.Embeds.process();
+              } else {
+                const script = document.createElement('script');
+                script.src = "https://www.instagram.com/embed.js";
+                script.async = true;
+                document.body.appendChild(script);
+              }
+            }
+          });
         });
-      });
+      
+        function closeOverlay() {
+          overlay.style.display = 'none';
+          content.innerHTML = '';
+        }
+     </script>
 
-      function closeOverlay() {
-        overlay.style.display = 'none';
-        content.innerHTML = '';
-      }
-    </script>
 
     <script async src="//www.instagram.com/embed.js"></script>
     
