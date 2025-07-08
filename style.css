@@ -1005,5 +1005,8 @@ html, body {
     top: 15px;
     z-index: 999999;
   }
+  .video-banner {
+    margin-top: 80px;
+  }
 }
 
