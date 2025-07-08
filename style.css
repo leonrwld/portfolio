@@ -898,6 +898,10 @@ html, body {
   transition: transform 0.3s ease;
   overflow: hidden;
   text-align: center;
+  
+  transform: scale (0,8);
+  transform-origin: center center;
+  margin: 0 auto;
 }
 
 .video-item img {
