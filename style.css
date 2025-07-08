@@ -927,34 +927,8 @@ html, body {
   padding: 0 !important;
 }
 
-/* Schließen-X */
-.video-overlay-2 .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  z-index: 10000;
-  user-select: none;
-}
 
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: white;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10001;
-  padding: 0;
-  line-height: 1;
-}
-.lightbox-close:hover {
-  color: #ccc;
-}
+
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
@@ -966,10 +940,5 @@ html, body {
     max-height: 60vh;
   }
 
-  .video-overlay-2 .close-btn {
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-  }
 }
 
