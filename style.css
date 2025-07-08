@@ -992,7 +992,6 @@ html, body {
   
   .videogrid {
     grid-template-columns: 1fr;
-    padding-inline: 1.5rem;
   }
 
   #videoContent iframe {
