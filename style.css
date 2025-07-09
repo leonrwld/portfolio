@@ -993,7 +993,8 @@ html, body {
   .videogrid {
     grid-template-columns: 1fr;
     padding-inline: 1.5rem;
-    padding-block: 0.5rem;
+    padding-block: 0rem;
+    margin-top: -1rem;
   }
 
   #videoContent iframe {
