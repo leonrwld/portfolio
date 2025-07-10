@@ -164,25 +164,8 @@
         document.body.style.overflow = 'hidden';
 
         else if (type === 'instagram') {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-        window.open(src, '_blank'); // auf Mobilgerät: extern öffnen
-        return;
-        } else {
-        embedCode =
-        `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; margin: auto;"></blockquote>`;
-        content.innerHTML = embedCode;
-        overlay.style.display = 'flex';
-                
-        if (window.instgrm) {
-        window.instgrm.Embeds.process();
-        } else {
-        const script = document.createElement('script');
-        script.src = "https://www.instagram.com/embed.js";
-        script.async = true;
-        document.body.appendChild(script);
-        }
-        }
+          embedCode =
+            `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; margin: auto;"></blockquote>`;
         }
       });
     });
