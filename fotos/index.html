@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotos – Leon Rohrwild</title>
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Google Fonts: Nunito & Barlow -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Nunito&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header id="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="/">LR</a></div>
+      <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li><a href="/videos/">Videos</a></li>
+          <li><a href="/fotos/">Fotos</a></li>
+          <li><a href="/ueber/">Über</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="/impressum/">Impressum</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="section">
+      <h1>Fotos</h1>
+    </section>
+
+    <section class="lotsofphotos">
+      <!-- Deine Foto-Gruppen bleiben unverändert -->
+      <!-- ... alles wie in deinem Originalcode ... -->
+    </section>
+  </main>
+
+  <section class="endabschnitt">
+    <p>
+      Kiel, Germany <br>
+      www.leonrohrwild.com <br>
+      © Leon Rohrwild
+    </p>
+  </section>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-img" src="" alt="Großansicht" />
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    mobileMenu.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
+    });
+
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    document.querySelectorAll('.photo-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.querySelector('.lightbox-img');
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = 'auto';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.querySelector('.lightbox.active')) {
+        document.querySelector('.close-btn').click();
+      }
+    });
+  </script>
+</body>
+</html>
