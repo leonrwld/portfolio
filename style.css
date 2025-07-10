@@ -987,14 +987,13 @@ html, body {
 @media (max-width: 768px) {
 
   .video-page-content {
-    padding: 100px 16px 40px;
+    padding: 40px 16px 40px;
   }
   
   .videogrid {
     grid-template-columns: 1fr;
     padding-inline: 1.5rem;
     padding-block: 0rem;
-    margin-top: -1rem;
   }
 
   #videoContent iframe {
@@ -1008,7 +1007,7 @@ html, body {
     z-index: 999999;
   }
   .video-banner {
-    margin-top: 60px;
+    margin-top: 70px;
   }
 }
 
