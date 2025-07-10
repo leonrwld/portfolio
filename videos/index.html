@@ -158,8 +158,17 @@
         overlay.setAttribute('aria-hidden', 'false');
         overlay.focus();
 
-        if (type === 'instagram' && window.instgrm) {
-            window.instgrm.Embeds.process();
+        if (type === 'instagram') {
+            const checkInstagramLoaded = () => {
+              if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+                window.instgrm.Embeds.process();
+              } else {
+                // Instagram-Script ist noch nicht geladen → später erneut versuchen
+                setTimeout(checkInstagramLoaded, 100);
+              }
+            };
+          
+            checkInstagramLoaded();
           }
         }
       });
