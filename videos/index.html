@@ -6,6 +6,7 @@
   <title>Videos – Leon Rohrwild</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <script async defer src="https://www.instagram.com/embed.js"></script>
 </head>
 
 <body>
@@ -157,14 +158,8 @@
         overlay.setAttribute('aria-hidden', 'false');
         overlay.focus();
 
-        if (type === 'instagram') {
-          if (window.instgrm) {
+        if (type === 'instagram' && window.instgrm) {
             window.instgrm.Embeds.process();
-          } else {
-            const script = document.createElement('script');
-            script.src = "https://www.instagram.com/embed.js";
-            script.async = true;
-            document.body.appendChild(script);
           }
         }
       });
