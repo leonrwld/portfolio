@@ -104,73 +104,75 @@
     </p>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mobileMenu = document.getElementById('mobile-menu');
-      const navList = document.getElementById('nav-list');
-      const navbar = document.getElementById('navbar');
-
-      // Menü toggeln
-      mobileMenu.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
-      });
-
-      // Menü schließen beim Klick auf einen Link
-      navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navList.classList.remove('active');
-          document.body.style.overflow = 'auto';
-        });
-      });
-
-      // Navbar-Effekt beim Scrollen
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-      });
-
-      // === Horizontales Drag-Scrolling für Galerie ===
-      const galleryTrack = document.querySelector('.gallery-track');
-      if (galleryTrack) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        galleryTrack.addEventListener('mousedown', (e) => {
-          isDown = true;
-          galleryTrack.classList.add('dragging');
-          startX = e.pageX - galleryTrack.offsetLeft;
-          scrollLeft = galleryTrack.scrollLeft;
-        });
-
-        galleryTrack.addEventListener('mouseleave', () => {
-          isDown = false;
-          galleryTrack.classList.remove('dragging');
-        });
-
-        galleryTrack.addEventListener('mouseup', () => {
-          isDown = false;
-          galleryTrack.classList.remove('dragging');
-        });
-
-        galleryTrack.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - galleryTrack.offsetLeft;
-          const walk = (x - startX) * 2; // Scroll-Geschwindigkeit
-          galleryTrack.scrollLeft = scrollLeft - walk;
-        });
-
-        // Automatisches Scrollen beim Seiten-Scroll
-        window.addEventListener('scroll', () => {
-          const rect = galleryTrack.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            const scrollSpeed = 0.5;
-            galleryTrack.scrollLeft += scrollSpeed;
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const mobileMenu = document.getElementById('mobile-menu');
+          const navList = document.getElementById('nav-list');
+          const navbar = document.getElementById('navbar');
+      
+          // === MOBILES MENÜ ===
+          // Menü öffnen/schließen beim Klick auf das Burger-Icon
+          mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : 'auto';
+          });
+      
+          // Menü schließen beim Klick auf einen Navigationslink
+          navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              navList.classList.remove('active');
+              document.body.style.overflow = 'auto';
+            });
+          });
+      
+          // === NAVBAR-SCROLL-EFFEKT ===
+          window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+          });
+      
+          // === HORIZONTALES DRAG-SCROLLING FÜR GALERIE ===
+          const galleryTrack = document.querySelector('.gallery-track');
+          if (galleryTrack) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+      
+            galleryTrack.addEventListener('mousedown', (e) => {
+              isDown = true;
+              galleryTrack.classList.add('dragging');
+              startX = e.pageX - galleryTrack.offsetLeft;
+              scrollLeft = galleryTrack.scrollLeft;
+            });
+      
+            galleryTrack.addEventListener('mouseleave', () => {
+              isDown = false;
+              galleryTrack.classList.remove('dragging');
+            });
+      
+            galleryTrack.addEventListener('mouseup', () => {
+              isDown = false;
+              galleryTrack.classList.remove('dragging');
+            });
+      
+            galleryTrack.addEventListener('mousemove', (e) => {
+              if (!isDown) return;
+              e.preventDefault();
+              const x = e.pageX - galleryTrack.offsetLeft;
+              const walk = (x - startX) * 2; // Scroll-Geschwindigkeit
+              galleryTrack.scrollLeft = scrollLeft - walk;
+            });
+      
+            // === AUTOMATISCHES SCROLLEN BEI SICHTBARKEIT ===
+            window.addEventListener('scroll', () => {
+              const rect = galleryTrack.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const scrollSpeed = 0.5;
+                galleryTrack.scrollLeft += scrollSpeed;
+              }
+            });
           }
         });
-      }
-    });
-  </script>
+    </script>
+
 </body>
 </html>
