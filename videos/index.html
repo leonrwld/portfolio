@@ -6,7 +6,6 @@
   <title>Videos – Leon Rohrwild</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
-  <script async defer src="https://www.instagram.com/embed.js"></script>
 </head>
 
 <body>
@@ -146,11 +145,11 @@
         let embedCode = '';
 
         if (type === 'youtube') {
-          embedCode = `<iframe src="${src}" allowfullscreen style="width:100%; height:100%; border:none;" loading="lazy"></iframe>`;
+          embedCode = <iframe src="${src}" allowfullscreen style="width:100%; height:100%; border:none;" loading="lazy"></iframe>;
         } else if (type === 'instagram') {
-          embedCode = `
+          embedCode = 
             <blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width: 100%; max-width: 360px; aspect-ratio: 9 / 16; margin: auto;"></blockquote>
-          `;
+          ;
         }
 
         content.innerHTML = embedCode;
@@ -159,16 +158,13 @@
         overlay.focus();
 
         if (type === 'instagram') {
-            const checkInstagramLoaded = () => {
-              if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
-                window.instgrm.Embeds.process();
-              } else {
-                // Instagram-Script ist noch nicht geladen → später erneut versuchen
-                setTimeout(checkInstagramLoaded, 100);
-              }
-            };
-          
-            checkInstagramLoaded();
+          if (window.instgrm) {
+            window.instgrm.Embeds.process();
+          } else {
+            const script = document.createElement('script');
+            script.src = "https://www.instagram.com/embed.js";
+            script.async = true;
+            document.body.appendChild(script);
           }
         }
       });
