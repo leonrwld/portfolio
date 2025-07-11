@@ -473,6 +473,23 @@ html, body {
   line-height: 1.6;
 }
 
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
 
 
 /*Impressum*/
