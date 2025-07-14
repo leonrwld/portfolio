@@ -168,7 +168,7 @@
         }
          else if (type === 'local') {
           embedCode = `
-            <video controls autoplay style="width:100%; aspect-ratio: 9 / 16;">
+            <video controls autoplay style="width:100%; max-width:360px; aspect-ratio: 9 / 16;">
               <source src="${src}" type="video/mp4" />
               Ihr Browser unterstützt das Video-Tag nicht.
             </video>
