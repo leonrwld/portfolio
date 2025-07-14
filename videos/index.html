@@ -60,7 +60,7 @@
               <img src="../Fotos-Webseite/Versuch-Titelbild.jpg" alt="MS Stadt Kiel" />
               <p class="video-description">Krängungsversuch der MS Stadt Kiel</p>
             </div>
-            <div class="video-item" src="../Fotos-Webseite/Kieler Woche 2024 Socialmedia Clip.mp4">
+            <div class="video-item" data-type="local" data-src="../Fotos-Webseite/Kieler Woche 2024 Socialmedia Clip.mp4">
               <img src="../Fotos-Webseite/Kiwo-Titelbild.jpg" alt="Kieler Woche 2024" />
               <p class="video-description">Kieler Woche 2024 - Social Media Video</p>
             </div>
@@ -165,6 +165,14 @@
           embedCode = `<iframe src="${src}" allowfullscreen style="width:100%; aspect-ratio: 16 / 9; border:none;" loading="lazy"></iframe>`;
         } else if (type === 'instagram') {
           embedCode = `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="width:100%; max-width:360px; aspect-ratio: 9 / 16; margin:auto;"></blockquote>`;
+        }
+         else if (type === 'local') {
+          embedCode = `
+            <video controls autoplay style="width:100%; aspect-ratio: 9 / 16;">
+              <source src="${src}" type="video/mp4" />
+              Ihr Browser unterstützt das Video-Tag nicht.
+            </video>
+          `;
         }
 
         content.innerHTML = embedCode;
