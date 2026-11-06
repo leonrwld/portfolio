@@ -187,7 +187,7 @@ html, body {
 }
 
 .video-overlay h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
@@ -198,7 +198,7 @@ html, body {
 
 @media (max-width: 768px) {
   .video-overlay h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .video-overlay p {
